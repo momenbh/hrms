@@ -23,9 +23,8 @@
                          <li><a href="leaves-employee.html">Employees</a></li>
                         <li><a href="leave-settings.html"> Manage Leave</a></li>
                         <li><a href="attendance.html">Attendance (Admin)</a></li>
-                       <li><a href="attendance-employee.html">Attendance (Employee)</a></li>
-                       <li><a class="active" href="leaves.html">Leaves (Admin) <span class="badge badge-pill bg-primary float-right">1</span></a></li>
-                        <li><a href="departments.html">Notice</a></li>
+                        <li><a href="attendance-employee.html">Attendance (Employee)</a></li>
+                         <li><a href="departments.html">Notice</a></li>
                         <li><a href="designations.html">Holidays</a></li>
                         <li><a href="timesheet.html">Timesheet</a></li>
                         <li><a href="shift-scheduling.html">Shift & Schedule</a></li>
