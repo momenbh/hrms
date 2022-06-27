@@ -257,9 +257,9 @@
 
         <li class="nav-item dropdown has-arrow main-drop">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <span class="user-img"><img src="{{url('backend/assets/img/profiles/momen.jpg')}}" alt="">
+                <span class="user-img"><img src="{{url('backend/assets/img/momen.jpg')}}">
                 <span class="status online"></span></span>
-                <span>Soeng Souy</span>
+                <span>Admin</span>
             </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="profile.html">My Profile</a>
