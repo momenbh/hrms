@@ -16,9 +16,10 @@ use App\Http\Controllers\Backend\DepartmentController;
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('backend.master');
 });
 Route::get('/dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
 // department operation
 Route::get('/department/view',[DepartmentController::class,'view'])->name('view.department');
 Route::get('/department/form', [DepartmentController::class, 'form'])->name('form.department');
+Route::post('/department/store', [DepartmentController::class, 'store'])->name('store.department');
