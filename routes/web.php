@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboardcontroller;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DesignationController;
+use App\Http\Controllers\Backend\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,7 @@ Route::post('/department/store', [DepartmentController::class, 'store'])->name('
 Route::get('/designation/view',[DesignationController::class,'view'])->name('view.designation');
 Route::get('/designation/form',[DesignationController::class,'form'])->name('form.designation');
 Route::post('/designation/store',[DesignationController::class,'store'])->name('store.designation');
+// Admin operation
+Route::get('/admin/view',[AdminController::class,'view'])->name('view.admin');
+Route::get('/form/view',[AdminController::class,'form'])->name('form.admin');
+Route::post('/store/view',[AdminController::class,'store'])->name('store.admin');
