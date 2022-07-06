@@ -9,7 +9,7 @@
             <th scope="col">Employee_name</th>
             <th scope="col">Phone_number</th>
             <th scope="col">Email</th>
-            <th scope="col">Department Id</th>
+            <th scope="col">Department Name</th>
             <th scope="col">Date_of_birth</th>
             <th scope="col">Age</th>
             <th scope="col">Action</th>
@@ -24,7 +24,7 @@
             <td scope="col">{{$data->employee_name}}</td>
             <td scope="col">{{$data->phone_number}}</td>
             <td scope="col">{{$data->employee_email}}</td>
-            <td scope="col">{{$data->department_id}}</td>
+            <td scope="col">{{$data->department->department_name}}</td>
             <td scope="col">{{$data->date_of_birth}}</td>
             <td scope="col">{{$data->age}}</td>
             <td scope="col">

@@ -10,7 +10,8 @@ use App\Models\Department;
 class EmployeeController extends Controller
 {
     public function view(){
-        $employees=Employee::paginate(5);
+        $employees=Employee::with('department')->OrderBy('id','desc')->paginate(5);
+
         return view('Backend.employee.employee',compact('employees'));
     }
     public function form(){
@@ -18,6 +19,11 @@ class EmployeeController extends Controller
         return view('Backend.employee.employeeform', compact('department'));
     }
     public function store(Request $request){
+        $request->validate([
+            'employee_name'=>'required|string',
+            'phone_number'=>'required|numeric',
+            'employee_email'=>'required|string',
+        ]);
         Employee::create([
           'employee_name'=>$request->employee_name,
           'phone_number'=>$request->phone_number,
