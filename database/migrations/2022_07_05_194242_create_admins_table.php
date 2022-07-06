@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('department_name');
-            $table->string('department_type');
-            $table->string('department_documentation');
-            $table->string('department_email');
+            $table->string('admin_name');
+            $table->string('phone_number');
+            $table->string('admin_email');
+            $table->date('date_of_birth');
+            $table->double('age');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('admins');
     }
 };

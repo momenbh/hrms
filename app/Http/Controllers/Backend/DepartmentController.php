@@ -9,7 +9,8 @@ use App\Models\Department;
 class DepartmentController extends Controller
 {
     public function view(){
-        return view('Backend.department.department');
+        $department=Department:: paginate(5);
+        return view('Backend.department.department',compact('department'));
     }
     public function form(){
         return view('Backend.department.departmentform');
@@ -18,11 +19,11 @@ class DepartmentController extends Controller
         // dd($request->all());
         Department::create([
             'department_name'=>$request->department_name,
-            'department_place'=>$re0quest->department_place,
-            'department_document'=>$request->department_documentation,
+            'department_type'=>$request->department_type,
+            'department_documentation'=>$request->department_documentation,
             'department_email'=>$request->department_email,
 
         ]);
-        return redirect()->back();
+        return redirect()->route('view.department');
     }
 }
