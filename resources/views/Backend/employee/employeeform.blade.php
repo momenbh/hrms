@@ -18,7 +18,7 @@
     <label for="name">Employee Name *</label>
     <input  id="name"type="text" class="form-control" name="employee_name" required>
     <label for="number">Phone Number* </label>
-    <input  id="number"type="tel" class="form-control" name="phone_number" required>
+    <input  id="number"type="text" class="form-control" name="phone_number" required>
     <label for="email">Employee Email*</label>
     <input  id="email"type="email" class="form-control" name="employee_email" required>
     <label for="date">Date OF birth</label>

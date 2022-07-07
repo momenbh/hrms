@@ -20,7 +20,7 @@
                     <ul style="display: none;">
                         <li><a href="{{route('view.department')}}">All Departments</a></li>
                         <li><a href="{{route('view.admin')}}">Admins</a></li>
-                        <li><a href="holidays.html">Designations</a></li>
+                        <li><a href="{{route('view.designation')}}">Designations</a></li>
                          <li><a href="{{route('view.employee')}}">Employees</a></li>
                         <li><a href="leave-settings.html"> Manage Leave</a></li>
                         <li><a href="attendance.html">Attendance (Admin)</a></li>

@@ -9,7 +9,7 @@ use App\Models\Department;
 class DepartmentController extends Controller
 {
     public function view(){
-        $department=Department:: paginate(5);
+        $department=Department::OrderBy('id','desc')->paginate(5);
         return view('Backend.department.department',compact('department'));
     }
     public function form(){
@@ -17,6 +17,13 @@ class DepartmentController extends Controller
     }
     public function store(Request $request){
         // dd($request->all());
+        $request->validate([
+            'department_name'=>'required|string',
+            'department_type'=>'required|string',
+            'department_documentation'=>'required|string',
+            'department_email'=>'required|string',
+
+        ]);
         Department::create([
             'department_name'=>$request->department_name,
             'department_type'=>$request->department_type,

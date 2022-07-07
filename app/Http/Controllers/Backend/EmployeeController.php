@@ -21,7 +21,7 @@ class EmployeeController extends Controller
     public function store(Request $request){
         $request->validate([
             'employee_name'=>'required|string',
-            'phone_number'=>'required|numeric',
+            'phone_number'=>'required|string',
             'employee_email'=>'required|string',
         ]);
         Employee::create([

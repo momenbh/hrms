@@ -9,7 +9,7 @@ use App\Models\Admin;
 class AdminController extends Controller
 {
     public function view(){
-        $admins=Admin::paginate(5);
+        $admins=Admin::OrderBy('id','desc')->paginate(5);
         return view('Backend.admin.admin',compact('admins'));
     }
     public function form(){

@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Dashboardcontroller;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\DesignationController;
 
 // use App\Http\Controllers\Backend\DepartmentController;
 // use App\Http\Controllers\Backend\DesignationController;
@@ -30,9 +31,9 @@ Route::get('/department/view',[DepartmentController::class,'view'])->name('view.
 Route::get('/department/form', [DepartmentController::class, 'form'])->name('form.department');
 Route::post('/department/store', [DepartmentController::class, 'store'])->name('store.department');
 // designation operation
-// Route::get('/designation/view',[DesignationController::class,'view'])->name('view.designation');
-// Route::get('/designation/form',[DesignationController::class,'form'])->name('form.designation');
-// Route::post('/designation/store',[DesignationController::class,'store'])->name('store.designation');
+Route::get('/designation/view',[DesignationController::class,'view'])->name('view.designation');
+Route::get('/designation/form',[DesignationController::class,'form'])->name('form.designation');
+Route::post('/designation/store',[DesignationController::class,'store'])->name('store.designation');
 // // Admin operation
 Route::get('/admin/view',[AdminController::class,'view'])->name('view.admin');
 Route::get('/admin/form',[AdminController::class,'form'])->name('form.admin');
