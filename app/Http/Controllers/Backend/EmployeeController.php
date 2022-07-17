@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class EmployeeController extends Controller
 {
     public function view(){
-        $employees=Employee::with(['department','designation'])->OrderBy('id','desc')->paginate(5);
+        $employees=Employee::with(['department','designationRelation'])->OrderBy('id','desc')->paginate(5);
 
 
         return view('Backend.employee.employee',compact('employees'));

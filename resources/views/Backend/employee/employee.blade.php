@@ -20,14 +20,14 @@
         <tbody>
             @foreach ($employees as $data)
 
-
+            {{-- @dd($data) --}}
             <tr>
                 <td scope="col">{{$data->id}}</td>
                 <td scope="col">{{$data->employee_name}}</td>
                 <td scope="col">{{$data->phone_number}}</td>
                 <td scope="col">{{$data->employee_email}}</td>
                 <td scope="col">{{$data->department->department_name}}</td>
-                <td scope="col">{{$data->designation}}</td>
+                <td scope="col">{{$data->designationRelation->designation}}</td>
                 <td scope="col">{{$data->date_of_birth}}</td>
                 <td scope="col">{{$data->age}}</td>
                 <td scope="col">

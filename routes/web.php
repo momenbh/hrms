@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\Dashboardcontroller;
-use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\AdminController;
-use App\Http\Controllers\Backend\EmployeeController;
-use App\Http\Controllers\Backend\DesignationController;
 use App\Http\Controllers\Backend\Leavecontroller;
+use App\Http\Controllers\Backend\EmployeeController;
+use App\Http\Controllers\Backend\Dashboardcontroller;
+use App\Http\Controllers\Backend\AttendanceController;
+use App\Http\Controllers\Backend\DepartmentController;
+use App\Http\Controllers\Backend\DesignationController;
 
 // use App\Http\Controllers\Backend\DepartmentController;
 // use App\Http\Controllers\Backend\DesignationController;
@@ -47,3 +48,8 @@ Route::post('/employee/store',[EmployeeController::class,'store'])->name('store.
 Route::get('/leave/view',[Leavecontroller::class,'view'])->name('view.leave');
 Route::get('/leave/form',[Leavecontroller::class,'form'])->name('form.leave');
 Route::post('/leave/store',[Leavecontroller::class,'store'])->name('store.leave');
+// attendance operation
+Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
+Route::get('/attendance/form',[AttendanceController::class,'form'])->name('form.attendance');
+Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
+

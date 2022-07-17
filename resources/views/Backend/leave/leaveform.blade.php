@@ -21,12 +21,6 @@
         <input  id="date"type="date" class="form-control" name="to_date" required>
         <label for="date" >from Date</label>
         <input  id="date"type="date" class="form-control" name="from_date" required>
-        {{-- <select name="employee" id="">
-            <option >Employe</option>
-            @foreach ($employees as $data)
-                <option value="{{$data->id}}">{{$data->employee_name}}</option>
-            @endforeach
-        </select> --}} 
         <button type="submit" class="btn btn-primary">submit</button>
 
     </form>
