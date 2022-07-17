@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\DesignationController;
+use App\Http\Controllers\Backend\Leavecontroller;
 
 // use App\Http\Controllers\Backend\DepartmentController;
 // use App\Http\Controllers\Backend\DesignationController;
@@ -42,3 +43,7 @@ Route::post('/admin/store',[AdminController::class,'store'])->name('store.admin'
 Route::get('/employee/view',[EmployeeController::class,'view'])->name('view.employee');
 Route::get('/employee/form',[EmployeeController::class,'form'])->name('form.employee');
 Route::post('/employee/store',[EmployeeController::class,'store'])->name('store.employee');
+// leave operation
+Route::get('/leave/view',[Leavecontroller::class,'view'])->name('view.leave');
+Route::get('/leave/form',[Leavecontroller::class,'form'])->name('form.leave');
+Route::post('/leave/store',[Leavecontroller::class,'store'])->name('store.leave');

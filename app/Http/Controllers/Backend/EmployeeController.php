@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\Department;
+use App\Models\Designation;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EmployeeController extends Controller
 {
     public function view(){
-        $employees=Employee::with('department')->OrderBy('id','desc')->paginate(5);
+        $employees=Employee::with(['department','designation'])->OrderBy('id','desc')->paginate(5);
+
 
         return view('Backend.employee.employee',compact('employees'));
     }
     public function form(){
         $department = Department:: all();
-        return view('Backend.employee.employeeform', compact('department'));
+        $designation = Designation::all();
+        return view('Backend.employee.employeeform', compact('department','designation'));
     }
     public function store(Request $request){
         $request->validate([
@@ -31,6 +34,7 @@ class EmployeeController extends Controller
           'date_of_birth'=>$request->date_of_birth,
           'age'=>$request->age,
           'department_id' => $request->department,
+          'designation' =>$request->designation
 
         ]);
         return redirect()->route('view.employee');

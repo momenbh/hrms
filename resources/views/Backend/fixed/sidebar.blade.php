@@ -22,7 +22,7 @@
                         <li><a href="{{route('view.admin')}}">Admins</a></li>
                         <li><a href="{{route('view.designation')}}">Designations</a></li>
                          <li><a href="{{route('view.employee')}}">Employees</a></li>
-                        <li><a href="leave-settings.html"> Manage Leave</a></li>
+                        <li><a href="{{route('view.leave')}}"> Manage Leave</a></li>
                         <li><a href="attendance.html">Attendance (Admin)</a></li>
                         <li><a href="attendance-employee.html">Attendance (Employee)</a></li>
                          <li><a href="departments.html">Notice</a></li>

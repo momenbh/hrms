@@ -31,6 +31,12 @@
             <option value="{{$data->id}}">{{$data->department_name}}</option>
         @endforeach
     </select>
+    <select name="designation" id="">
+        <option value="">Select designation</option>
+        @foreach ($designation as $data)
+            <option value="{{$data->id}}">{{$data->designation}}</option>
+        @endforeach
+    </select>
     <button class="btn btn-primary" type="submit">create</button>
 
 
