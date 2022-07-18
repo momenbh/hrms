@@ -1,96 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <meta name="description" content="Smarthr - Bootstrap Admin Template">
-		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
-        <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-        <meta name="robots" content="noindex, nofollow">
-        <title>Dashboard - HRMS admin template</title>
 
-		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Smarthr - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dashboard - HRMS admin template</title>
 
-		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{url('backend/assets/css/bootstrap.min.css')}}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="{{url('backend/assets/css/font-awesome.min.css')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url('backend/assets/css/bootstrap.min.css')}}">
 
-		<!-- Lineawesome CSS -->
-        <link rel="stylesheet" href="{{url('backend/assets/css/line-awesome.min.css')}}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{url('backend/assets/css/font-awesome.min.css')}}">
 
-		<!-- Chart CSS -->
-		<link rel="stylesheet" href="{{url('backend/assets/plugins/morris/morris.css')}}">
+    <!-- Lineawesome CSS -->
+    <link rel="stylesheet" href="{{url('backend/assets/css/line-awesome.min.css')}}">
 
-		<!-- Main CSS -->
-        <link rel="stylesheet" href="{{url('backend/assets/css/style.css')}}">
+    <!-- Chart CSS -->
+    <link rel="stylesheet" href="{{url('backend/assets/plugins/morris/morris.css')}}">
 
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{url('backend/assets/css/style.css')}}">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
-    </head>
 
-    <body>
-		<!-- Main Wrapper -->
-        <div class="main-wrapper">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-			<!-- Header -->
+</head>
 
+<body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
 
-            @include('Backend.fixed.header')
-
-			<!-- /Header -->
-
-			<!-- Sidebar -->
+        <!-- Header -->
 
 
-            @include('Backend.fixed.sidebar')
+        @include('Backend.fixed.header')
+
+        <!-- /Header -->
+
+        <!-- Sidebar -->
 
 
-
-
-			<!-- /Sidebar -->
-
-			<!-- Page Wrapper -->
-            <div class="page-wrapper">
-
-				<!-- Page Content -->
+        @include('Backend.fixed.sidebar')
 
 
 
-                @yield('backend_content')
+
+        <!-- /Sidebar -->
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+
+            <!-- Page Content -->
 
 
 
-				<!-- /Page Content -->
+            @yield('backend_content')
 
-            </div>
-			<!-- /Page Wrapper -->
+
+
+            <!-- /Page Content -->
 
         </div>
-		<!-- /Main Wrapper -->
+        <!-- /Page Wrapper -->
 
-		<!-- jQuery -->
-        <script src="{{url('backend/assets/js/jquery-3.5.1.min.js')}}"></script>
+    </div>
+    <!-- /Main Wrapper -->
 
-		<!-- Bootstrap Core JS -->
-        <script src="{{url('backend/assets/js/popper.min.js')}}"></script>
-        <script src="{{url('backend/assets/js/bootstrap.min.js')}}"></script>
+    <!-- jQuery -->
+    <script src="{{url('backend/assets/js/jquery-3.5.1.min.js')}}"></script>
 
-		<!-- Slimscroll JS -->
-		<script src="{{url('backend/assets/js/jquery.slimscroll.min.js')}}"></script>
+    <!-- Bootstrap Core JS -->
+    <script src="{{url('backend/assets/js/popper.min.js')}}"></script>
+    <script src="{{url('backend/assets/js/bootstrap.min.js')}}"></script>
 
-		<!-- Chart JS -->
-		<script src="{{url('backend/assets/plugins/morris/morris.min.js')}}"></script>
-		<script src="{{url('backend/assets/plugins/raphael/raphael.min.js')}}"></script>
-		<script src="{{url('backend/assets/js/chart.js')}}"></script>
+    <!-- Slimscroll JS -->
+    <script src="{{url('backend/assets/js/jquery.slimscroll.min.js')}}"></script>
 
-		<!-- Custom JS -->
-		<script src="{{url('backend/assets/js/app.js')}}"></script>
+    <!-- Chart JS -->
+    <script src="{{url('backend/assets/plugins/morris/morris.min.js')}}"></script>
+    <script src="{{url('backend/assets/plugins/raphael/raphael.min.js')}}"></script>
+    <script src="{{url('backend/assets/js/chart.js')}}"></script>
 
-    </body>
+    <!-- Custom JS -->
+    <script src="{{url('backend/assets/js/app.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+</body>
+
 </html>

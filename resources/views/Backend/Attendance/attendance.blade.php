@@ -24,8 +24,8 @@
                 <td scope="col">{{$data->time}}</td>
                 <td scope="col">
                     <a class="btn btn-primary" href="">Edit</a>
-                    <a class="btn btn-success" href="">View</a>
-                    <a  class="btn btn-danger" href="">Delete</a>
+                    <a class="btn btn-success" href="{{route('single.attendance',$data->id)}}">View</a>
+                    <a  class="btn btn-danger" href="{{route('delete.attendance',$data->id)}}">Delete</a>
 
                 </td>
 

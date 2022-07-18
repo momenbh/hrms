@@ -53,8 +53,16 @@ Route::post('/leave/store',[Leavecontroller::class,'store'])->name('store.leave'
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
 Route::get('/attendance/form',[AttendanceController::class,'form'])->name('form.attendance');
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
+// delete operation for attendance
+Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('delete.attendance');
+Route::get('/attendance/single/{id}',[AttendanceController::class,'single_view'])->name('single.attendance');
+
+
 // notice operation
 Route::get('/notice/view',[Noticecontroller::class,'view'])->name('view.notice');
 Route::get('/notice/form',[Noticecontroller::class,'form'])->name('form.notice');
 Route::post('/notice/store',[Noticecontroller::class,'store'])->name('store.notice');
-
+// Delete operation for notice
+Route::get('/notice/delete/{id}', [Noticecontroller::class, 'delete'])-> name('delete.notice');
+// Single view
+Route::get('/notice/single/{id}', [Noticecontroller::class, 'single_view'])->name('single.notice');

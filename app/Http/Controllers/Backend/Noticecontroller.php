@@ -37,4 +37,16 @@ class Noticecontroller extends Controller
         ]);
         return redirect()->route('view.notice');
     }
+
+    //Delete
+    public function delete($id){
+        $notice=Notice::find($id)->delete();
+        return redirect()->back();
+    }
+
+    //Single view
+    public function single_view($id){
+        $notice=Notice::find($id);
+        return view('Backend.notice.single', compact('notice'));
+    }
 }

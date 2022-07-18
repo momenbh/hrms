@@ -31,4 +31,14 @@ class AttendanceController extends Controller
         ]);
         return redirect()->route('view.attendance');
     }
+    // delete
+    public function delete($id){
+        $attendance=Attendance::find($id)->delete();
+        return redirect()->back();
+
+    }
+    public function single_view($id){
+        $attendance=Attendance::find($id);
+        return view('Backend.Attendance.view',compact('attendance'));
+    }
 }

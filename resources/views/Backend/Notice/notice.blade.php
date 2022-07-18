@@ -30,10 +30,9 @@
                 <td scope="col">{{$data->notice_time}}</td>
                 <td scope="col">
                     <a class="btn btn-primary" href="">Edit</a>
-                    <a class="btn btn-success" href="">View</a>
-                    <a  class="btn btn-danger" href="">Delete</a>
+                    <a class="btn btn-success" href="{{route('single.notice', $data->id)}}">View</a>
+                    <a  class="btn btn-danger" href="{{route('delete.notice', $data->id)}}">Delete</a>
                   </td>
-            </tr>
             </tr>
             @endforeach
         </tbody>
