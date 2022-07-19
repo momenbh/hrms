@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Leave;
+use App\Models\Employee;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,12 +17,14 @@ class Leavecontroller extends Controller
     }
     public function form(){
 
-
-        return view('Backend.leave.leaveform');
+        $employees = Employee::all();
+        return view('Backend.leave.leaveform', compact('employees'));
     }
     public function store(Request $request){
+        // dd($request);
         $request->validate([
             'reason'=>'required|string',
+            'employee_name'=>'required|string',
             'days'=>'required|string',
             'to_date'=>'required|string',
             'from_date'=>'required|string',
@@ -31,6 +34,8 @@ class Leavecontroller extends Controller
         Leave::create([
           'reason'=>$request->reason,
           'days'=>$request->days,
+          'employee_name'=>$request->employee_name,
+
           'to_date'=>$request->to_date,
           'from_date'=>$request->from_date,
         ]);
