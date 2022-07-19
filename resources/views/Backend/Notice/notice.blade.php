@@ -17,11 +17,11 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ( $notice as $data )
+            @foreach ( $notice as$key=>$data )
 
 
             <tr>
-                <td scope="col">{{$data->id}}</td>
+                <td scope="col">{{$key+1}}</td>
                 <td scope="col">{{$data->new_notice}}</td>
                 <td scope="col">{{$data->govement_notice}}</td>
                 <td scope="col">{{$data->department_notice}}</td>
@@ -29,9 +29,9 @@
                 <td scope="col">{{$data->payroll_notice}}</td>
                 <td scope="col">{{$data->notice_time}}</td>
                 <td scope="col">
-                    <a class="btn btn-primary" href="">Edit</a>
-                    <a class="btn btn-success" href="{{route('single.notice', $data->id)}}">View</a>
-                    <a  class="btn btn-danger" href="{{route('delete.notice', $data->id)}}">Delete</a>
+                    <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                    <a class="btn btn-success" href="{{route('single.notice', $data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
+                    <a  class="btn btn-danger" href="{{route('delete.notice', $data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
                   </td>
             </tr>
             @endforeach

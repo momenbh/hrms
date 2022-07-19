@@ -30,4 +30,12 @@ class AdminController extends Controller
         ]);
         return redirect()->route('view.admin');
     }
+    public function delete($id){
+        $admins=Admin::find($id)->delete();
+        return redirect()->back();
+    }
+    public function views($id){
+        $admins=Admin::find($id);
+        return view('Backend.admin.adminview',compact('admins'));
+    }
 }

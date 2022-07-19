@@ -15,7 +15,8 @@ public function department()
     return $this->belongsTo(Department::class);
 
 }
-public function designationRelation(){
+public function designationRelation()
+{
     return $this->belongsTo(Designation::class,'designation','id');
 }
 

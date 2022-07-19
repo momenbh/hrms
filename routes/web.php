@@ -37,18 +37,37 @@ Route::post('/department/store', [DepartmentController::class, 'store'])->name('
 Route::get('/designation/view',[DesignationController::class,'view'])->name('view.designation');
 Route::get('/designation/form',[DesignationController::class,'form'])->name('form.designation');
 Route::post('/designation/store',[DesignationController::class,'store'])->name('store.designation');
-// // Admin operation
+// designation delete view operation
+Route::get('/designation/delete/{id}',[DesignationController::class,'delete'])->name('delete.designation');
+Route::get('/designation/views/{id}',[DesignationController::class,'views'])->name('views.designation');
+
+
+ // Admin operation
 Route::get('/admin/view',[AdminController::class,'view'])->name('view.admin');
 Route::get('/admin/form',[AdminController::class,'form'])->name('form.admin');
 Route::post('/admin/store',[AdminController::class,'store'])->name('store.admin');
+// Admin delete view operation
+Route::get('/admin/delete/{id}',[AdminController::class,'delete'])->name('delete.admin');
+Route::get('/admin/views/{id}',[AdminController::class,'views'])->name('views.admin');
 // employee operation
 Route::get('/employee/view',[EmployeeController::class,'view'])->name('view.employee');
 Route::get('/employee/form',[EmployeeController::class,'form'])->name('form.employee');
 Route::post('/employee/store',[EmployeeController::class,'store'])->name('store.employee');
+// delete view operation
+Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('delete.employee');
+Route::get('/employee/views/{id}',[EmployeeController::class,'views'])->name('views.employee');
+
+
+
 // leave operation
 Route::get('/leave/view',[Leavecontroller::class,'view'])->name('view.leave');
 Route::get('/leave/form',[Leavecontroller::class,'form'])->name('form.leave');
 Route::post('/leave/store',[Leavecontroller::class,'store'])->name('store.leave');
+// delete operation
+Route::get('leave/delete/{id}',[Leavecontroller::class,'delete'])->name('delete.leave');
+// view operation
+Route::get('leave/views/{id}',[Leavecontroller::class,'views'])->name('views.leave');
+
 // attendance operation
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
 Route::get('/attendance/form',[AttendanceController::class,'form'])->name('form.attendance');

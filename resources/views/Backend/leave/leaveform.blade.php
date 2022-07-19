@@ -21,6 +21,7 @@
         <input  id="date"type="date" class="form-control" name="to_date" required>
         <label for="date" >from Date</label>
         <input  id="date"type="date" class="form-control" name="from_date" required>
+       
         <button type="submit" class="btn btn-primary">submit</button>
 
     </form>

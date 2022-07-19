@@ -15,20 +15,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($admins as $data)
+        @foreach ($admins as$key=> $data)
 
 
         <tr>
-             <td scope="col">{{$data->id}}</td>
+             <td scope="col">{{$key+1}}</td>
              <td scope="col">{{$data->admin_name}}</td>
              <td scope="col">{{$data->phone_number}}</td>
              <td scope="col">{{$data->admin_email}}</td>
              <td scope="col">{{$data->date_of_birth}}</td>
              <td scope="col">{{$data->age}}</td>
              <td>
-                <a class="btn btn-primary" href="">Edit</a>
-                <a class="btn btn-success" href="">View</a>
-                <a  class="btn btn-danger" href="">Delete</a>
+                <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                <a class="btn btn-success" href="{{route('views.admin',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
+                <a  class="btn btn-danger" href="{{route('delete.admin',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>
         </tr>
            @endforeach

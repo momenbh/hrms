@@ -26,8 +26,7 @@
                         <li><a href="{{route('view.attendance')}}">Attendance </a></li>
                          <li><a href="{{route('view.notice')}}">Notice</a></li>
                         <li><a href="designations.html">Holidays</a></li>
-                        <li><a href="timesheet.html">Timesheet</a></li>
-                        <li><a href="shift-scheduling.html">Shift & Schedule</a></li>
+
 
                     </ul>
                 </li>
@@ -43,10 +42,7 @@
                         <li><a href="holidays.html"></a></li>
                         <li><a href="timesheet.html">Leave</a></li>
                         <li><a href="timesheet.html">Payroll</a></li>
-                        <li><a href="attendance-employee.html">Attendance (Employee)</a></li>
-                        <li><a class="active" href="leaves.html">Leaves (Admin) <span class="badge badge-pill bg-primary float-right">1</span></a></li>
-                        <li><a href="timesheet.html">Timesheet</a></li>
-                        <li><a href="shift-scheduling.html">Shift & Schedule</a></li>
+                        <li><a href="attendance-employee.html">Attendance</a></li>
                         <li><a href="overtime.html">Overtime</a></li>
                     </ul>
                 </li>

@@ -8,10 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Leave extends Model
 {
     protected $guarded=[];
-    public function empolyee()
-    {
-        return $this->belongsTo(Employee::class);
-
-    }
+   
 
 }

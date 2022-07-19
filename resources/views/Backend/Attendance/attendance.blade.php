@@ -23,9 +23,9 @@
                 <td scope="col">{{$data->logout_date}}</td>
                 <td scope="col">{{$data->time}}</td>
                 <td scope="col">
-                    <a class="btn btn-primary" href="">Edit</a>
-                    <a class="btn btn-success" href="{{route('single.attendance',$data->id)}}">View</a>
-                    <a  class="btn btn-danger" href="{{route('delete.attendance',$data->id)}}">Delete</a>
+                    <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                    <a class="btn btn-success" href="{{route('single.attendance',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
+                    <a  class="btn btn-danger" href="{{route('delete.attendance',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
 
                 </td>
 

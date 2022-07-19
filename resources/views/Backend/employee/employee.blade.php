@@ -18,11 +18,11 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($employees as $data)
+            @foreach ($employees as $key=>$data)
 
             {{-- @dd($data) --}}
             <tr>
-                <td scope="col">{{$data->id}}</td>
+                <td scope="col">{{$key+1}}</td>
                 <td scope="col">{{$data->employee_name}}</td>
                 <td scope="col">{{$data->phone_number}}</td>
                 <td scope="col">{{$data->employee_email}}</td>
@@ -31,9 +31,9 @@
                 <td scope="col">{{$data->date_of_birth}}</td>
                 <td scope="col">{{$data->age}}</td>
                 <td scope="col">
-                    <a class="btn btn-primary" href="">Edit</a>
-                    <a class="btn btn-success" href="">View</a>
-                    <a  class="btn btn-danger" href="">Delete</a>
+                    <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                    <a class="btn btn-success" href="{{route('views.employee',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
+                    <a  class="btn btn-danger" href="{{route('delete.employee',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
                 </td>
             </tr>
             @endforeach

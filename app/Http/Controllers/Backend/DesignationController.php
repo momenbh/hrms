@@ -31,4 +31,12 @@ class DesignationController extends Controller
         ]);
         return redirect()->route('view.designation');
     }
+    public function delete($id){
+        $designation=Designation::find($id)->delete();
+        return redirect()->back();
+    }
+    public function views($id){
+        $designation=Designation::find($id);
+        return view('Backend.designation.designationview',compact('designation'));
+    }
 }

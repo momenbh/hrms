@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class EmployeeController extends Controller
 {
     public function view(){
-        $employees=Employee::with(['department','designationRelation'])->OrderBy('id','desc')->paginate(5);
+        $employees=Employee::with('department','designationRelation')->OrderBy('id','desc')->paginate(5);
 
 
         return view('Backend.employee.employee',compact('employees'));
@@ -38,6 +38,15 @@ class EmployeeController extends Controller
 
         ]);
         return redirect()->route('view.employee');
+
+    }
+    public function delete($id){
+        $employees=Employee::find($id)->delete();
+        return redirect()->back();
+    }
+    public function views($id){
+        $employees=Employee::find($id);
+        return view('Backend.employee.employeeview',compact('employees'));
 
     }
 }

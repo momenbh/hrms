@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Leave;
-// use App\Models\Employee;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class Leavecontroller extends Controller
 {
@@ -14,6 +15,7 @@ class Leavecontroller extends Controller
         return view('Backend.leave.leave',compact('leave'));
     }
     public function form(){
+
 
         return view('Backend.leave.leaveform');
     }
@@ -34,6 +36,14 @@ class Leavecontroller extends Controller
         ]);
 
         return redirect()->route('view.leave');
+    }
+    public function delete($id){
+        $leave=Leave::find($id)->delete();
+        return redirect()->back();
+    }
+    public function views($id){
+        $leave=Leave::find($id);
+        return view('Backend.leave.view',compact('leave'));
     }
 
 }
