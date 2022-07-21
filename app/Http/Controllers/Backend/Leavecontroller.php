@@ -12,7 +12,9 @@ use App\Http\Controllers\Controller;
 class Leavecontroller extends Controller
 {
     public function view(){
-        $leave=Leave::OrderBy('id','desc')->paginate(5);
+
+        $leave=Leave::with('employeeId')->OrderBy('id','desc')->paginate(5);
+        // dd($leave);
         return view('Backend.leave.leave',compact('leave'));
     }
     public function form(){

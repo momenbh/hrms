@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Attendance extends Model
 {
     protected $guarded=[];
+    public function employeerelation(){
+        
+        return $this->belongsTo(Employee::class, 'employee_name', 'id');
+    }
 }
+

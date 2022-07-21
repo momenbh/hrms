@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class AttendanceController extends Controller
 {
     public function view(){
-        $attendance=Attendance::OrderBy('id','desc')->paginate(5);
+        $attendance=Attendance::with('employeerelation')->OrderBy('id','desc')->paginate(5);
         return view('Backend.attendance.attendance',compact('attendance'));
     }
     public function form(){
