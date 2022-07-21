@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Employee;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,10 +14,12 @@ class AttendanceController extends Controller
         return view('Backend.attendance.attendance',compact('attendance'));
     }
     public function form(){
-        return view('Backend.Attendance.attendanceform');
+        $employees=Employee::all();
+        return view('Backend.Attendance.attendanceform',compact('employees'));
     }
     public function store(Request $request){
         $request->validate([
+            'employee_name'=>'required|string',
             'login_date'=>'required|string',
             'logout_date'=>'required|string',
             'time'=>'required|string',
@@ -24,6 +27,7 @@ class AttendanceController extends Controller
 
         ]);
         Attendance::create([
+         'employee_name'=>$request->employee_name,
           'login_date'=>$request->login_date,
           'logout_date'=>$request->logout_date,
           'time'=>$request->time,

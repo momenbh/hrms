@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th scope="col">id</th>
+                <th scope="col">employee id</th>
                 <th scope="col">login_date</th>
                 <th scope="col">logout_date</th>
                 <th scope="col">time</th>
@@ -19,6 +20,7 @@
 
             <tr>
                 <td scope="col">{{$data->id}}</td>
+                <td scope="col">{{$data->employee_name}}</td>
                 <td scope="col">{{$data->login_date}}</td>
                 <td scope="col">{{$data->logout_date}}</td>
                 <td scope="col">{{$data->time}}</td>

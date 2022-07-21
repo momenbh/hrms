@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DesignationController;
 use App\Http\Controllers\Backend\Noticecontroller;
+use App\Http\Controllers\Backend\HolidayController;
 
 // use App\Http\Controllers\Backend\DepartmentController;
 // use App\Http\Controllers\Backend\DesignationController;
@@ -85,3 +86,10 @@ Route::post('/notice/store',[Noticecontroller::class,'store'])->name('store.noti
 Route::get('/notice/delete/{id}', [Noticecontroller::class, 'delete'])-> name('delete.notice');
 // Single view
 Route::get('/notice/single/{id}', [Noticecontroller::class, 'single_view'])->name('single.notice');
+// holiday operation
+Route::get('/holiday/view',[HolidayController::class,'view'])->name('view.holiday');
+Route::get('/holiday/form',[HolidayController::class,'form'])->name('form.holiday');
+Route::post('/holiday/store',[HolidayController::class,'store'])->name('store.holiday');
+// delete operation
+Route::get('holiday/delete/{id}',[HolidayController::class,'delete'])->name('delete.holiday');
+Route::get('holiday/views/{id}',[HolidayController::class,'views'])->name('views.holiday');

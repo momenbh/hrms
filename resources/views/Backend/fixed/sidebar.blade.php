@@ -25,7 +25,7 @@
                         <li><a href="{{route('view.leave')}}"> Manage Leave</a></li>
                         <li><a href="{{route('view.attendance')}}">Attendance </a></li>
                          <li><a href="{{route('view.notice')}}">Notice</a></li>
-                        <li><a href="designations.html">Holidays</a></li>
+                        <li><a href="{{route('view.holiday')}}">Holidays</a></li>
 
 
                     </ul>

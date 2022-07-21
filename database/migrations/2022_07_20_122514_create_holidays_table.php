@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('holidays', function (Blueprint $table) {
             $table->id();
-            $table->string('employee_name');
-            $table->date('login_date');
-            $table->date('logout_date');
-            $table->string('time');
+            $table->string('title');
+            $table->date('holiday_date');
+            $table->integer('day');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('holidays');
     }
 };
