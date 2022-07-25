@@ -30,7 +30,9 @@ use App\Http\Controllers\Backend\PayrollController;
 Route::get('/', function () {
     return view('backend.master');
 });
-Route::get('/dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
+// dashboard
+Route::get('/employe/dashboard',[Dashboardcontroller::class,'dashboard'])->name('employee.dashboard');
+Route::get('/admin/dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
 // department operation
 Route::get('/department/view',[DepartmentController::class,'view'])->name('view.department');
 Route::get('/department/form', [DepartmentController::class, 'form'])->name('form.department');

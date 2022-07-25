@@ -9,7 +9,7 @@
                     <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a class="active" href="{{route('dashboard')}}">Admin Dashboard</a></li>
-                        <li><a href="employee-dashboard.html">Employee Dashboard</a></li>
+                        <li><a href="{{route('employee.dashboard')}}">Employee Dashboard</a></li>
                     </ul>
                 </li>
                 <li class="menu-title">
