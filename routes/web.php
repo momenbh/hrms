@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DesignationController;
 use App\Http\Controllers\Backend\Noticecontroller;
 use App\Http\Controllers\Backend\HolidayController;
+use App\Http\Controllers\Backend\PayrollController;
 
 // use App\Http\Controllers\Backend\DepartmentController;
 // use App\Http\Controllers\Backend\DesignationController;
@@ -93,3 +94,10 @@ Route::post('/holiday/store',[HolidayController::class,'store'])->name('store.ho
 // delete operation
 Route::get('holiday/delete/{id}',[HolidayController::class,'delete'])->name('delete.holiday');
 Route::get('holiday/views/{id}',[HolidayController::class,'views'])->name('views.holiday');
+// payrool operation
+Route::get('/payroll/view',[PayrollController::class,'view'])->name('view.payroll');
+Route::get('/payroll/form',[PayrollController::class,'form'])->name('form.payroll');
+Route::post('/payroll/store',[PayrollController::class,'store'])->name('store.form');
+// delete view operation
+Route::get('/payroll/delete/{id}',[PayrollController::class,'delete'])->name('delete.payroll');
+Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');

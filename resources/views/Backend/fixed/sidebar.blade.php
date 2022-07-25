@@ -13,10 +13,10 @@
                     </ul>
                 </li>
                 <li class="menu-title">
-                    <span>Admins</span>
+                    <span>Employees</span>
                 </li>
                 <li class="submenu">
-                    <a href="#" class="noti-dot"><i class="la la-user"></i> <span>Departments</span> <span class="menu-arrow"></span></a>
+                    <a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="{{route('view.department')}}">All Departments</a></li>
                         <li><a href="{{route('view.admin')}}">Admins</a></li>
@@ -26,24 +26,7 @@
                         <li><a href="{{route('view.attendance')}}">Attendance </a></li>
                          <li><a href="{{route('view.notice')}}">Notice</a></li>
                         <li><a href="{{route('view.holiday')}}">Holidays</a></li>
-
-
-                    </ul>
-                </li>
-
-
-                <li class="menu-title">
-                    <span>Employees</span>
-                </li>
-                <li class="submenu">
-                    <a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="employees.html">All Employees</a></li>
-                        <li><a href="holidays.html"></a></li>
-                        <li><a href="timesheet.html">Leave</a></li>
-                        <li><a href="timesheet.html">Payroll</a></li>
-                        <li><a href="attendance-employee.html">Attendance</a></li>
-                        <li><a href="overtime.html">Overtime</a></li>
+                        <li><a href="{{route('view.payroll')}}">payroll</a></li>
                     </ul>
                 </li>
 
