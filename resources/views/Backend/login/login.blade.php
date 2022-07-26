@@ -25,7 +25,7 @@
                         <h3 class="mb-4 text-center">Have an account?</h3>
                         <form action="#" class="signin-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username" required>
+                                <input type="email" class="form-control" placeholder="Enter your Email" required>
                             </div>
                             <div class="form-group">
                                 <input id="password-field" type="password" class="form-control" placeholder="Password"
@@ -44,7 +44,7 @@
                                     </label>
                                 </div>
                                 <div class="w-50 text-md-right">
-                                    <a href="#"  class="checkbox-wrap checkbox-primary">Registation</a>
+                                    <a href="{{route('form.registration')}}"  class="checkbox-wrap checkbox-primary">Registation</a>
                                 </div>
                             </div>
                         </form>

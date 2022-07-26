@@ -28,11 +28,21 @@ use App\Http\Controllers\Backend\DesignationController;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.master');
-});
+// Route::get('/', function () {
+//     return view('backend.master');
+// });
 // login
-Route::get('/login',[LoginController::class,'login'])->name('login.view');
+Route::get('/',[LoginController::class,'login'])->name('login.view');
+
+
+
+
+
+
+
+//  admin registration
+Route::get('/registration',[LoginController::class,'registration'])->name('form.registration');
+Route::post('/registration/store',[LoginController::class,'store'])->name('store.registration');
 
 
 // dashboard
