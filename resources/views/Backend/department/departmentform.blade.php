@@ -15,11 +15,11 @@
     <label for="name">Department Name*</label>
     <input   id="name"type="text" class="form-control" name='department_name' required>
 
-    <label for="type">Department Type*</label>
-    <input  id="type" type="text" class="form-control" name='department_type' required>
+    <label for="type">phone number*</label>
+    <input  id="type" type="text" class="form-control" name='phone_number' required>
 
-    <label for="document">Department Documentation</label>
-    <input  id="document"type="string" class="form-control" name='department_documentation' required>
+    <label for="document">Department details</label>
+    <input  id="document"type="string" class="form-control" name='department_details' required>
 
     <label for="email">Department Email</label>
     <input  id="email"type="email" class="form-control" name='department_email' required>

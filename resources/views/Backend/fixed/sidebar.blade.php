@@ -30,7 +30,7 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">
+                {{-- <li class="menu-title">
                     <span>HR</span>
                 </li>
                 <li class="submenu">
@@ -242,7 +242,7 @@
                             <a href="javascript:void(0);"> <span>Level 1</span></a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

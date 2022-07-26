@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\Leavecontroller;
+use App\Http\Controllers\Backend\LoginController;
+use App\Http\Controllers\Backend\Noticecontroller;
+use App\Http\Controllers\Backend\HolidayController;
+use App\Http\Controllers\Backend\PayrollController;
 use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\Dashboardcontroller;
 use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\DepartmentController;
 use App\Http\Controllers\Backend\DesignationController;
-use App\Http\Controllers\Backend\Noticecontroller;
-use App\Http\Controllers\Backend\HolidayController;
-use App\Http\Controllers\Backend\PayrollController;
 
 // use App\Http\Controllers\Backend\DepartmentController;
 // use App\Http\Controllers\Backend\DesignationController;
@@ -30,6 +31,10 @@ use App\Http\Controllers\Backend\PayrollController;
 Route::get('/', function () {
     return view('backend.master');
 });
+// login
+Route::get('/login',[LoginController::class,'login'])->name('login.view');
+
+
 // dashboard
 Route::get('/employe/dashboard',[Dashboardcontroller::class,'dashboard'])->name('employee.dashboard');
 Route::get('/admin/dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
@@ -37,6 +42,11 @@ Route::get('/admin/dashboard',[Dashboardcontroller::class,'index'])->name('dashb
 Route::get('/department/view',[DepartmentController::class,'view'])->name('view.department');
 Route::get('/department/form', [DepartmentController::class, 'form'])->name('form.department');
 Route::post('/department/store', [DepartmentController::class, 'store'])->name('store.department');
+// department view delete operation
+Route::get('/department/delete/{id}',[DepartmentController::class,'delete'])->name('delete.department');
+Route::get('/department/views/{id}',[DepartmentController::class,'views'])->name('views.department');
+
+
 // designation operation
 Route::get('/designation/view',[DesignationController::class,'view'])->name('view.designation');
 Route::get('/designation/form',[DesignationController::class,'form'])->name('form.designation');

@@ -6,7 +6,7 @@
     <thead>
         <tr>
         <th scope="col">Id</th>
-        <th scope="col">Admin_name</th>
+        <th scope="col">Name</th>
         <th scope="col">Phone number</th>
         <th scope="col">Admin_email</th>
         <th scope="col">Date_of_birth</th>
@@ -15,12 +15,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($admins as$key=> $data)
+        @foreach ($admins as $key=>$data)
 
 
         <tr>
              <td scope="col">{{$key+1}}</td>
-             <td scope="col">{{$data->admin_name}}</td>
+             <td scope="col">{{$data->name}}</td>
              <td scope="col">{{$data->phone_number}}</td>
              <td scope="col">{{$data->admin_email}}</td>
              <td scope="col">{{$data->date_of_birth}}</td>

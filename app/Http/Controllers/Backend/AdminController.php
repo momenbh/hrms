@@ -20,7 +20,7 @@ class AdminController extends Controller
 
         Admin::create([
 
-            'admin_name'=>$request->admin_name,
+            'name'=>$request->name,
             'phone_number'=>$request->phone_number,
             'admin_email'=>$request->admin_email,
             'date_of_birth'=>$request->date_of_birth,

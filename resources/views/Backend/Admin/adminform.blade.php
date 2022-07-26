@@ -2,8 +2,8 @@
 @section('backend_content')
 <form action="{{route('store.admin')}}" method="POST">
     @csrf
-    <label for="name">Admin Name</label>
-    <input id="name" type="text" class="form-control" name="admin_name">
+    <label for="name">Name</label>
+    <input id="name" type="text" class="form-control" name="name">
     <label for="number">Phone Number</label>
     <input id="number" type="text" class="form-control" name="phone_number">
     <label for="email">Email</label>

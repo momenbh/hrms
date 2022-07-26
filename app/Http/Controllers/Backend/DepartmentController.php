@@ -19,18 +19,26 @@ class DepartmentController extends Controller
         // dd($request->all());
         $request->validate([
             'department_name'=>'required|string',
-            'department_type'=>'required|string',
-            'department_documentation'=>'required|string',
+            'phone_number'=>'required|string',
+            'department_details'=>'required|string',
             'department_email'=>'required|string',
 
         ]);
         Department::create([
             'department_name'=>$request->department_name,
-            'department_type'=>$request->department_type,
-            'department_documentation'=>$request->department_documentation,
+            'phone_number'=>$request->phone_number,
+            'department_details'=>$request->department_details,
             'department_email'=>$request->department_email,
 
         ]);
         return redirect()->route('view.department');
     }
+    public function delete($id){
+        $department=Department::find($id)->delete();
+        return redirect()->back();
+     }
+     public function views($id){
+        $department=Department::find($id);
+        return view('Backend.department.departmentview',compact('department'));
+     }
 }
