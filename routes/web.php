@@ -43,6 +43,9 @@ Route::get('/',[LoginController::class,'login'])->name('login.view');
 //  admin registration
 Route::get('/registration',[LoginController::class,'registration'])->name('form.registration');
 Route::post('/registration/store',[LoginController::class,'store'])->name('store.registration');
+//  adminlogin
+Route::post('/login',[LoginController::class,'dologin'])->name('do.login');
+Route::get('/logout',[LoginController::class,'logout'])->name('do.logout');
 
 
 // dashboard

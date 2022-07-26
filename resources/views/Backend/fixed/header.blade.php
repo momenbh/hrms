@@ -263,9 +263,9 @@
                 </a>
 
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="profile.html">My Profile</a>
-                <a class="dropdown-item" href="settings.html">Settings</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+               
+                <a class="dropdown-item" href="{{route('do.logout')}}">Logout</a>
+
             </div>
         </li>
     </ul>

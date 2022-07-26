@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -20,7 +21,23 @@ class LoginController extends Controller
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
         ]);
-        return redirect()->back();
+        return redirect()->route('login.view');
 
     }
-}
+    public function dologin(Request $request){
+        $check=Auth::attempt([
+            'email'=>$request->email,
+            'password'=>$request->password,
+        ]);
+        return redirect()->route('dashboard');
+    }
+    public function logout(){
+
+
+            Auth::logout();
+
+            return redirect()->route('login.view');
+
+        }
+    }
+
