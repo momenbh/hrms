@@ -19,12 +19,12 @@
 
         <tr>
             <td scope="col">{{$key+1}} </td>
-            <td scope="col">{{optional($data->departmentid)->department_name}}</td>
+            <td scope="col">{{$data->department_name}}</td>
             <td scope="col">{{$data->phone_number}} </td>
             <td scope="col">{{$data->department_details}} </td>
             <td scope="col">{{$data->department_email}} </td>
             <td>
-                <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                <a class="btn btn-primary" href="{{route('edit.department',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
                 <a class="btn btn-success" href="{{route('views.department',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
                 <a  class="btn btn-danger" href="{{route('delete.department',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>

@@ -58,6 +58,8 @@ Route::post('/department/store', [DepartmentController::class, 'store'])->name('
 // department view delete operation
 Route::get('/department/delete/{id}',[DepartmentController::class,'delete'])->name('delete.department');
 Route::get('/department/views/{id}',[DepartmentController::class,'views'])->name('views.department');
+Route::get('/department/edit/{id}',[DepartmentController::class,'edit'])->name('edit.department');
+Route::post('/department/update/{id}',[DepartmentController::class,'update'])->name('update.department');
 
 
 // designation operation

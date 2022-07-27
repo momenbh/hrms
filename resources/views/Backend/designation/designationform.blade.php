@@ -26,8 +26,8 @@
         <input  id="text"type="text" class="form-control" name="designation" required>
         <label for="text">status</label>
         <select name="status" id="" class="form-control">
-            <option @if($data->status == 'active') selected @endif value="active">Active</option>
-            <option @if($data->status == 'inactive') selected @endif value="inactive">Inactive</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
         </select>
         <button type="submit" class="btn btn-primary">create</button>
     </form>

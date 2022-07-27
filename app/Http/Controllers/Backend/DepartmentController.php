@@ -41,4 +41,20 @@ class DepartmentController extends Controller
         $department=Department::find($id);
         return view('Backend.department.departmentview',compact('department'));
      }
+     public function edit($id){
+        $department=Department::find($id);
+        return view('Backend.department.edit',compact('department'));
+
+     }
+     public function update(Request $request,$id){
+        $department=Department::find($id);
+        $department->update([
+            'department_name'=>$request->department_name,
+            'phone_number'=>$request->phone_number,
+            'department_details'=>$request->department_details,
+            'department_email'=>$request->department_email,
+
+        ]);
+        return redirect()->route('view.department');
+     }
 }
