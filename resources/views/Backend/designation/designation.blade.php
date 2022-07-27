@@ -7,6 +7,7 @@
         <tr>
             <th scope="col">id</th>
             <th scope="col">designation</th>
+            <th scope="col">department_name</th>
             <th scope="col">status</th>
             <th scope="col">Action</th>
         </tr>
@@ -18,6 +19,7 @@
         <tr>
             <td scope="col">{{$key+1}}</td>
             <td scope="col">{{$data->designation}}</td>
+            <td scope="col">{{optional($data->departmentrelation)->department_name}}</td>
             <td scope="col">{{$data->status}}</td>
             <td>
                 <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>

@@ -17,7 +17,7 @@
         @csrf
         <label for="text" >Reason</label>
         <input  id="text"type="text" class="form-control" name="reason" required>
-        <label for="name" >Employee name</label>
+        <label for="name" >Employee name</label><br>
         <select id="name" class="form-select" aria-label="Default select example" name="employee_name">
             <option selected>select Employee</option>
 
@@ -25,7 +25,7 @@
                 <option value="{{$data->id}}">{{$data->employee_name}}</option>
             @endforeach
           </select>
-
+          <br>
         <label for="number" >days</label>
         <input  id="number"type="number" class="form-control" name="days" required min="1">
         <label for="date" >To Date</label>

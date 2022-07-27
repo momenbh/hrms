@@ -19,7 +19,7 @@
 
         <tr>
             <td scope="col">{{$key+1}} </td>
-            <td scope="col">{{$data->department_name}} </td>
+            <td scope="col">{{optional($data->departmentid)->department_name}}</td>
             <td scope="col">{{$data->phone_number}} </td>
             <td scope="col">{{$data->department_details}} </td>
             <td scope="col">{{$data->department_email}} </td>
