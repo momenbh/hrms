@@ -38,4 +38,22 @@ class AdminController extends Controller
         $admins=Admin::find($id);
         return view('Backend.admin.adminview',compact('admins'));
     }
+    public function edit($id){
+        $admins=Admin::find($id);
+        return view('Backend.admin.edit',compact('admins'));
+    }
+    public function update(Request $request,$id){
+        $admins=Admin::find($id);
+        $admins->update([
+            'name'=>$request->name,
+            'phone_number'=>$request->phone_number,
+            'admin_email'=>$request->admin_email,
+            'date_of_birth'=>$request->date_of_birth,
+            'age'=>$request->age,
+
+
+        ]);
+        return redirect()->route('view.admin');
+
+    }
 }

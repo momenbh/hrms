@@ -43,4 +43,20 @@ class DesignationController extends Controller
         $designation=Designation::find($id);
         return view('Backend.designation.designationview',compact('designation'));
     }
+    public function edit($id){
+        $department=Department::all();
+        $designation=Designation::find($id);
+        return view('Backend.designation.edit',compact('department','designation'));
+
+    }
+    public function update(Request $request,$id){
+        $designation=Designation::find($id);
+        $designation->update([
+            'designation'=>$request->designation,
+           'department_name'=>$request->department_name,
+           'status'=>$request->status,
+
+        ]);
+        return redirect()->route('view.designation');
+    }
 }

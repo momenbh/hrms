@@ -22,7 +22,7 @@
             <td scope="col">{{optional($data->departmentrelation)->department_name}}</td>
             <td scope="col">{{$data->status}}</td>
             <td>
-                <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                <a class="btn btn-primary" href="{{route('edit.designation',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
                 <a class="btn btn-success" href="{{route('views.designation',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
                 <a  class="btn btn-danger" href="{{route('delete.designation',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>

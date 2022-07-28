@@ -34,7 +34,7 @@ class EmployeeController extends Controller
           'date_of_birth'=>$request->date_of_birth,
           'age'=>$request->age,
           'department_id' => $request->department,
-          'designation' =>$request->designation
+          'designation' =>$request->designation,
 
         ]);
         return redirect()->route('view.employee');
@@ -48,5 +48,28 @@ class EmployeeController extends Controller
         $employees=Employee::find($id);
         return view('Backend.employee.employeeview',compact('employees'));
 
+    }
+    public function edit($id){
+        $department = Department:: all();
+        $designation = Designation::all();
+        $employees=Employee::find($id);
+        return view('Backend.employee.edit',compact('department','designation','employees'));
+
+
+    }
+    public function update(Request $request,$id){
+        $employees=Employee::find($id);
+        $employees->update([
+            'employee_name'=>$request->employee_name,
+            'phone_number'=>$request->phone_number,
+            'employee_email'=>$request->employee_email,
+            'date_of_birth'=>$request->date_of_birth,
+            'age'=>$request->age,
+            'department_id' => $request->department,
+            'designation' =>$request->designation,
+
+
+        ]);
+        return redirect()->route('view.employee');
     }
 }

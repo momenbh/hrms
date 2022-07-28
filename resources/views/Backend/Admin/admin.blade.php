@@ -26,7 +26,7 @@
              <td scope="col">{{$data->date_of_birth}}</td>
              <td scope="col">{{$data->age}}</td>
              <td>
-                <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                <a class="btn btn-primary" href="{{route('edit.admin',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
                 <a class="btn btn-success" href="{{route('views.admin',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
                 <a  class="btn btn-danger" href="{{route('delete.admin',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>

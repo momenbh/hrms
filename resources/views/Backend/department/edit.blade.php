@@ -16,7 +16,7 @@
         <label for="email">Department Email</label>
         <input  id="email"type="email" class="form-control" value="{{$department->department_email}}" name="department_email">
 
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 @endsection
