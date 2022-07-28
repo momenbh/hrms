@@ -34,18 +34,20 @@ use App\Http\Controllers\Backend\DesignationController;
 
 // login
 Route::get('/',[LoginController::class,'login'])->name('login.view');
-
-
-
-
-
-
+Route::post('/login',[LoginController::class,'dologin'])->name('do.login');
 
 //  admin registration
 Route::get('/registration',[LoginController::class,'registration'])->name('form.registration');
 Route::post('/registration/store',[LoginController::class,'store'])->name('store.registration');
+
+
+Route::group(['middleware'=> 'auth'], function (){
+
+
+
+
 //  adminlogin
-Route::post('/login',[LoginController::class,'dologin'])->name('do.login');
+
 Route::get('/logout',[LoginController::class,'logout'])->name('do.logout');
 
 
@@ -91,7 +93,7 @@ Route::post('/employee/store',[EmployeeController::class,'store'])->name('store.
 Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('delete.employee');
 Route::get('/employee/views/{id}',[EmployeeController::class,'views'])->name('views.employee');
 Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('edit.employee');
-Route::post('/employee/update/{id}',[EmployeeController::class,'update'])->name('update.employee');
+Route::post('/employee/update/{id}',[EmployeeController::class,'edit'])->name('edit.employee');
 
 
 
@@ -135,3 +137,4 @@ Route::post('/payroll/store',[PayrollController::class,'store'])->name('store.fo
 // delete view operation
 Route::get('/payroll/delete/{id}',[PayrollController::class,'delete'])->name('delete.payroll');
 Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');
+});

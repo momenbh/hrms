@@ -25,11 +25,20 @@ class LoginController extends Controller
 
     }
     public function dologin(Request $request){
+        // dd($request->all());
         $check=Auth::attempt([
             'email'=>$request->email,
             'password'=>$request->password,
         ]);
-        return redirect()->route('dashboard');
+        if($check){
+            return redirect()->route('dashboard');
+        }
+        else{
+            return redirect()->back();
+        }
+
+
+
     }
     public function logout(){
 
@@ -40,4 +49,3 @@ class LoginController extends Controller
 
         }
     }
-
