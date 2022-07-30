@@ -44,6 +44,21 @@ public function views($id){
     return view('Backend.Holiday.view',compact('holidays'));
 
 }
+public function edit($id){
+    $holidays=Holiday::find($id);
+    return view('Backend.notice.edit',compact('holidays'));
+}
+public function update(Request $request,$id){
+    $holidays=Holiday::find($id);
+    $holidays->update([
+
+        'title'=>$request->title,
+       'holiday_date'=>$request->holiday_date,
+       'day'=>$request->day,
+
+    ]);
+    return redirect()->route('view.holiday');
+}
 
 
 }

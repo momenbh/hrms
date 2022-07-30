@@ -54,6 +54,18 @@ class payrollcontroller extends Controller
         $payrolls=Payroll::find($id);
         return view('Backend.payroll.view',compact('payrolls'));
     }
+ public function edit($id){
+    $employees = Employee::all();
+    $payrolls=Payroll::find($id);
+    return view('Backend.payroll.edit',compact('employees','payrolls'));
 
+ }
+ public function update(Request $request,$id){
+    $payrolls=Payroll::find($id);
+    $payrolls->update([
+
+    ]);
+    return redirect()->route('view.payroll');
+ }
 
 }

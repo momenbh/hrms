@@ -49,4 +49,20 @@ class Noticecontroller extends Controller
         $notice=Notice::find($id);
         return view('Backend.notice.single', compact('notice'));
     }
+    public function edit($id){
+        $notice=Notice::find($id);
+        return view('Backend.notice.edit',compact('notice'));
+    }
+    public function update(Request $request,$id){
+        $notice=Notice::find($id);
+        $notice->update([
+            'new_notice'=>$request->new_notice,
+            'govement_notice'=>$request->govement_notice,
+            'department_notice'=>$request->department_notice,
+            'holiday_notice'=>$request->holiday_notice,
+            'payroll_notice'=>$request->payroll_notice,
+            'notice_time'=>$request->notice_time,
+        ]);
+        return redirect()->route('view.notice');
+    }
 }

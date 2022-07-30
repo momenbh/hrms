@@ -103,38 +103,48 @@ Route::get('/leave/form',[Leavecontroller::class,'form'])->name('form.leave');
 Route::post('/leave/store',[Leavecontroller::class,'store'])->name('store.leave');
 // delete operation
 Route::get('leave/delete/{id}',[Leavecontroller::class,'delete'])->name('delete.leave');
-// view operation
+// view operation edit upade
 Route::get('leave/views/{id}',[Leavecontroller::class,'views'])->name('views.leave');
+Route::get('leave/edit/{id}',[Leavecontroller::class,'edit'])->name('edit.leave');
+Route::post('leave/update/{id}',[Leavecontroller::class,'update'])->name('update.leave');
 
 // attendance operation
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
 Route::get('/attendance/form',[AttendanceController::class,'form'])->name('form.attendance');
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
-// delete operation for attendance
+// delete edit update operation for attendance
 Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('delete.attendance');
 Route::get('/attendance/single/{id}',[AttendanceController::class,'single_view'])->name('single.attendance');
+Route::get('/attendance/edit/{id}',[AttendanceController::class,'edit'])->name('edit.attendance');
+Route::post('/attendance/update/{id}',[AttendanceController::class,'update'])->name('update.attendance');
 
 
 // notice operation
 Route::get('/notice/view',[Noticecontroller::class,'view'])->name('view.notice');
 Route::get('/notice/form',[Noticecontroller::class,'form'])->name('form.notice');
 Route::post('/notice/store',[Noticecontroller::class,'store'])->name('store.notice');
-// Delete operation for notice
+// Delete  view edit update operation for notice
 Route::get('/notice/delete/{id}', [Noticecontroller::class, 'delete'])-> name('delete.notice');
-// Single view
 Route::get('/notice/single/{id}', [Noticecontroller::class, 'single_view'])->name('single.notice');
+Route::get('/notice/edit/{id}', [Noticecontroller::class, 'edit'])->name('edit.notice');
+Route::post('/notice/update/{id}', [Noticecontroller::class, 'update'])->name('update.notice');
 // holiday operation
 Route::get('/holiday/view',[HolidayController::class,'view'])->name('view.holiday');
 Route::get('/holiday/form',[HolidayController::class,'form'])->name('form.holiday');
 Route::post('/holiday/store',[HolidayController::class,'store'])->name('store.holiday');
-// delete operation
+// delete  delete edit update operation
 Route::get('holiday/delete/{id}',[HolidayController::class,'delete'])->name('delete.holiday');
 Route::get('holiday/views/{id}',[HolidayController::class,'views'])->name('views.holiday');
+Route::get('holiday/edit/{id}',[HolidayController::class,'edit'])->name('edit.holiday');
+Route::post('holiday/update/{id}',[HolidayController::class,'update'])->name('update.holiday');
 // payrool operation
 Route::get('/payroll/view',[PayrollController::class,'view'])->name('view.payroll');
 Route::get('/payroll/form',[PayrollController::class,'form'])->name('form.payroll');
 Route::post('/payroll/store',[PayrollController::class,'store'])->name('store.form');
-// delete view operation
+// delete view eidt update operation
 Route::get('/payroll/delete/{id}',[PayrollController::class,'delete'])->name('delete.payroll');
 Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');
+Route::get('/payroll/edit/{id}',[PayrollController::class,'edit'])->name('edit.payroll');
+Route::post('/payroll/update/{id}',[PayrollController::class,'update'])->name('update.payroll');
+// Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');
 });

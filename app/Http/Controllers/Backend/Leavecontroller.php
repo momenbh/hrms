@@ -37,7 +37,6 @@ class Leavecontroller extends Controller
           'reason'=>$request->reason,
           'days'=>$request->days,
           'employee_name'=>$request->employee_name,
-
           'to_date'=>$request->to_date,
           'from_date'=>$request->from_date,
         ]);
@@ -51,6 +50,24 @@ class Leavecontroller extends Controller
     public function views($id){
         $leave=Leave::find($id);
         return view('Backend.leave.view',compact('leave'));
+    }
+    public function edit($id){
+        $employees = Employee::all();
+        $leave=Leave::find($id);
+        return view('Backend.leave.edit',compact('employees','leave'));
+
+    }
+    public function update(Request $request,$id){
+        $leave=Leave::find($id);
+        $leave->update([
+            'reason'=>$request->reason,
+          'days'=>$request->days,
+          'employee_name'=>$request->employee_name,
+          'to_date'=>$request->to_date,
+          'from_date'=>$request->from_date,
+
+        ]);
+        return redirect()->route('view.leave');
     }
 
 }

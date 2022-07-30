@@ -25,7 +25,7 @@
             <td scope="col">{{$data->holiday_date}}</td>
             <td scope="col">{{$data->day}}</td>
             <td scope="col">
-                <a class="btn btn-primary" href=""><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
+                <a class="btn btn-primary" href="{{route('edit.holiday',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
                 <a class="btn btn-success" href="{{route('views.holiday',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
                 <a  class="btn btn-danger" href="{{route('delete.holiday',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>

@@ -20,7 +20,7 @@
         @foreach ($employees as $data)
             <option value="{{$data->id}}">{{$data->employee_name}}</option>
         @endforeach
-      </select>
+      </select><br>
     <label for="number">Basic payment </label>
     <input type="text" id="number"  class="form-control" name="basic_payment" required>
     <label for="number">overtime payment</label>

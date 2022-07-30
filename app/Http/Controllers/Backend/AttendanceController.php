@@ -45,4 +45,21 @@ class AttendanceController extends Controller
         $attendance=Attendance::find($id);
         return view('Backend.Attendance.view',compact('attendance'));
     }
+    public function edit($id){
+        $employees=Employee::all();
+        $attendance=Attendance::find($id);
+        return view('Backend.attendance.edit',compact('employees','attendance'));
+    }
+    public function update(Request $request,$id){
+        $attendance=Attendance::find($id);
+        $attendance->update([
+            'employee_name'=>$request->employee_name,
+            'login_date'=>$request->login_date,
+            'logout_date'=>$request->logout_date,
+            'time'=>$request->time,
+
+
+        ]);
+        return redirect()->route('view.attendance');
+    }
 }
