@@ -10,6 +10,7 @@
             <option value="{{$data->id}}">{{$data->employee_name}}</option>
         @endforeach
       </select>
+      <br>
     <label for="date">Login_date</label>
     <input  id="date"type="date" class="form-control" name="login_date" value="{{$attendance->login_date}}">
     <label for="date">Logout_date</label>

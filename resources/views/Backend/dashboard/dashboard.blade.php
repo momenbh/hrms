@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6 text-center">
@@ -162,10 +162,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Statistics Widget -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12 col-lg-12 col-xl-4 d-flex">
                 <div class="card flex-fill dash-statistics">
                     <div class="card-body">
@@ -288,10 +288,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- /Statistics Widget -->
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-6 d-flex">
                 <div class="card card-table flex-fill">
                     <div class="card-header">
@@ -406,9 +406,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-6 d-flex">
                 <div class="card card-table flex-fill">
                     <div class="card-header">
@@ -720,7 +720,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
     <!-- /Page Content -->

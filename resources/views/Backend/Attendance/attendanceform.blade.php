@@ -21,7 +21,7 @@
             @foreach ($employees as $data)
                 <option value="{{$data->id}}">{{$data->employee_name}}</option>
             @endforeach
-          </select>
+          </select><br>
         <label for="date">Login_date</label>
         <input  id="date"type="date" class="form-control" name="login_date" required >
         <label for="date">Logout_date</label>

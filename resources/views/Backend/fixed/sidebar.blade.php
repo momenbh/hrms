@@ -12,13 +12,13 @@
                         <li><a href="{{route('employee.dashboard')}}">Employee Dashboard</a></li>
                     </ul>
                 </li>
-                <li class="menu-title">
+                {{-- <li class="menu-title">
                     <span>Employees</span>
-                </li>
-                <li class="submenu">
-                    <a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="{{route('view.department')}}">All Departments</a></li>
+                </li> --}}
+                {{-- <li class="submenu">
+                    <a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a> --}}
+
+                        <li><a href="{{route('view.department')}}">Departments</a></li>
                         <li><a href="{{route('view.admin')}}">Admins</a></li>
                         <li><a href="{{route('view.designation')}}">Designations</a></li>
                          <li><a href="{{route('view.employee')}}">Employees</a></li>
@@ -27,8 +27,8 @@
                          <li><a href="{{route('view.notice')}}">Notice</a></li>
                         <li><a href="{{route('view.holiday')}}">Holidays</a></li>
                         <li><a href="{{route('view.payroll')}}">payroll</a></li>
-                    </ul>
-                </li>
+
+                {{-- </li> --}}
 
                 {{-- <li class="menu-title">
                     <span>HR</span>

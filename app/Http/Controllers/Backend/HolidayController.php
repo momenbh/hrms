@@ -46,7 +46,7 @@ public function views($id){
 }
 public function edit($id){
     $holidays=Holiday::find($id);
-    return view('Backend.notice.edit',compact('holidays'));
+    return view('Backend.Holiday.edit',compact('holidays'));
 }
 public function update(Request $request,$id){
     $holidays=Holiday::find($id);

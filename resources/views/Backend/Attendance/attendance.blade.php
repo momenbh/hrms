@@ -1,7 +1,9 @@
 @extends('Backend.master')
 @section('backend_content')
 <h1>Give Attendance</h1>
-<a href="{{route('form.attendance')}}" class="btn btn-primary">submit</a>
+<a href="{{route('form.attendance')}}" class="btn btn-primary">Create</a>
+<a href="{{route('checkin.attendance')}}" class="btn btn-primary">Checkin</a>
+
 <div>
     <table class="table">
         <thead>
@@ -15,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($attendance as$key=>$data )
+            @foreach ($attendance as $key=>$data )
 
 
             <tr>

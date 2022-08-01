@@ -32,9 +32,12 @@ use App\Http\Controllers\Backend\DesignationController;
 //     return view('backend.master');
 // });
 
-// login
+//  admin login
 Route::get('/',[LoginController::class,'login'])->name('login.view');
 Route::post('/login',[LoginController::class,'dologin'])->name('do.login');
+
+
+
 
 //  admin registration
 Route::get('/registration',[LoginController::class,'registration'])->name('form.registration');
@@ -112,6 +115,10 @@ Route::post('leave/update/{id}',[Leavecontroller::class,'update'])->name('update
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
 Route::get('/attendance/form',[AttendanceController::class,'form'])->name('form.attendance');
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
+Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
+Route::get('/attendance/checkoutattendance',[AttendanceController::class,'checkoutattendance'])->name('checkout.attendance');
+
+
 // delete edit update operation for attendance
 Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('delete.attendance');
 Route::get('/attendance/single/{id}',[AttendanceController::class,'single_view'])->name('single.attendance');
@@ -146,5 +153,5 @@ Route::get('/payroll/delete/{id}',[PayrollController::class,'delete'])->name('de
 Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');
 Route::get('/payroll/edit/{id}',[PayrollController::class,'edit'])->name('edit.payroll');
 Route::post('/payroll/update/{id}',[PayrollController::class,'update'])->name('update.payroll');
-// Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');
+
 });
