@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th scope="col">id</th>
-                <th scope="col">employee Name</th>
+                <th scope="col">Name</th>
                 <th scope="col">login_date</th>
                 <th scope="col">logout_date</th>
                 <th scope="col">time</th>
@@ -22,7 +22,7 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{optional($data->employeerelation)->employee_name}}</td>
+                <td scope="col">{{optional($data->employeerelation)->name}}</td>
                 <td scope="col">{{$data->login_date}}</td>
                 <td scope="col">{{$data->logout_date}}</td>
                 <td scope="col">{{$data->time}}</td>

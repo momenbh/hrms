@@ -1,6 +1,6 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>Mange Leave</h1>
+<h1>Apply Leave</h1>
 <a href="{{route('form.leave')}}" class="btn btn-primary">Create</a>
 <table class="table">
     <thead>

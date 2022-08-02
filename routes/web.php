@@ -96,7 +96,7 @@ Route::post('/employee/store',[EmployeeController::class,'store'])->name('store.
 Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('delete.employee');
 Route::get('/employee/views/{id}',[EmployeeController::class,'views'])->name('views.employee');
 Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('edit.employee');
-Route::post('/employee/update/{id}',[EmployeeController::class,'edit'])->name('edit.employee');
+Route::post('/employee/update/{id}',[EmployeeController::class,'update'])->name('update.employee');
 
 
 
@@ -112,8 +112,8 @@ Route::get('leave/edit/{id}',[Leavecontroller::class,'edit'])->name('edit.leave'
 Route::post('leave/update/{id}',[Leavecontroller::class,'update'])->name('update.leave');
 
 // attendance operation
+// Route::get('/attendance/view',[AttendanceController::class,'view'])->name('.attendance');
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
-Route::get('/attendance/form',[AttendanceController::class,'form'])->name('form.attendance');
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
 Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
 Route::get('/attendance/checkoutattendance',[AttendanceController::class,'checkoutattendance'])->name('checkout.attendance');

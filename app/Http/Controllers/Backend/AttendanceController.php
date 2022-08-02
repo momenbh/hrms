@@ -11,27 +11,17 @@ class AttendanceController extends Controller
 {
     public function view(){
         $attendance=Attendance::with('employeerelation')->OrderBy('id','desc')->paginate(5);
-        return view('Backend.attendance.attendance',compact('attendance'));
+        return view('Backend.attendance.attendanceform',compact('attendance'));
     }
-    public function form(){
-        $employees=Employee::all();
-        return view('Backend.Attendance.attendanceform',compact('employees'));
-    }
+    // public function form(){
+    //     $employees=Employee::all();
+    //     return view('Backend.Attendance.attendanceform',compact('employees'));
+    // }
     public function store(Request $request){
-        $request->validate([
-            'employee_name'=>'required|string',
-            'login_date'=>'required|string',
-            'logout_date'=>'required|string',
-            'time'=>'required|string',
 
-
-        ]);
         Attendance::create([
-         'employee_name'=>$request->employee_name,
-          'login_date'=>$request->login_date,
-          'logout_date'=>$request->logout_date,
-          'time'=>$request->time,
-
+         'checkin'=>$request->checkin,
+         'name'=>$request->name,
         ]);
         return redirect()->route('view.attendance');
     }
@@ -45,28 +35,29 @@ class AttendanceController extends Controller
         $attendance=Attendance::find($id);
         return view('Backend.Attendance.view',compact('attendance'));
     }
-    public function edit($id){
-        $employees=Employee::all();
-        $attendance=Attendance::find($id);
-        return view('Backend.attendance.edit',compact('employees','attendance'));
-    }
-    public function update(Request $request,$id){
-        $attendance=Attendance::find($id);
-        $attendance->update([
-            'employee_name'=>$request->employee_name,
-            'login_date'=>$request->login_date,
-            'logout_date'=>$request->logout_date,
-            'time'=>$request->time,
+    // public function edit($id){
+    //     $employees=Employee::all();
+    //     $attendance=Attendance::find($id);
+    //     return view('Backend.attendance.edit',compact('employees','attendance'));
+    // }
+    // public function update(Request $request,$id){
+    //     $attendance=Attendance::find($id);
+    //     $attendance->update([
+    //         'employee_name'=>$request->employee_name,
+    //         'login_date'=>$request->login_date,
+    //         'logout_date'=>$request->logout_date,
+    //         'time'=>$request->time,
 
 
-        ]);
-        return redirect()->route('view.attendance');
-    }
+    //     ]);
+    //     return redirect()->route('view.attendance');
+    // }
     public function checkattendance (){
         $attendance=Attendance::OrderBy('id','desc')->paginate(5);
         return view('Backend.Attendance.checkin',compact('attendance'));
     }
     public function checkoutattendance(){
+
         return redirect()->route('view.attendance');
     }
 }

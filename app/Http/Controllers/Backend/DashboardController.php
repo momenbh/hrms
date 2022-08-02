@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Admin;
+use App\Models\Leave;
 use App\Models\Employee;
+use App\Models\Attendance;
 use App\Models\Department;
 use App\Models\Designation;
 use Illuminate\Http\Request;
@@ -16,7 +18,9 @@ class DashboardController extends Controller
         $department=Department::all();
         $designation=Designation::all();
         $employees=Employee::all();
-        return view('Backend.dashboard.dashboard', compact('admins','department','designation','employees'));
+        $leave=Leave::all();
+        $attendance=Attendance::all();
+        return view('Backend.dashboard.dashboard', compact('admins','department','designation','employees','leave','attendance'));
 
     }
     public function dashboard(){

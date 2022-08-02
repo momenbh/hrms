@@ -17,6 +17,7 @@
     </a>
 
     <!-- Header Title -->
+    @if(auth()->user()->role=='admin')
     <div class="page-title-box">
         <h3>H.R.Mangement System</h3>
     </div>
@@ -263,12 +264,15 @@
                 </a>
 
             <div class="dropdown-menu">
-               
+
+
                 <a class="dropdown-item" href="{{route('do.logout')}}">Logout</a>
 
             </div>
         </li>
+        @endif
     </ul>
+
     <!-- /Header Menu -->
 
 

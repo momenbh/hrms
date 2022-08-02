@@ -50,6 +50,7 @@ class EmployeeController extends Controller
 
     }
     public function edit($id){
+      
         $department = Department:: all();
         $designation = Designation::all();
         $employees=Employee::find($id);

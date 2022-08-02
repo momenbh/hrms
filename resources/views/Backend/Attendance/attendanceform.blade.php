@@ -12,23 +12,27 @@
                 </div>
         @endif
     </div>
+
     <form action="{{route('store.attendance')}}" method="POST">
         @csrf
-        <label for="">Employee Name</label>
-        <select id="name" class="form-select" aria-label="Default select example" name="employee_name">
-            <option selected>select Employee</option>
+        <h1>Name: {{auth()->user()->name}}</h1>
 
-            @foreach ($employees as $data)
-                <option value="{{$data->id}}">{{$data->employee_name}}</option>
-            @endforeach
-          </select><br>
-        <label for="date">Login_date</label>
-        <input  id="date"type="date" class="form-control" name="login_date" required >
-        <label for="date">Logout_date</label>
-        <input  id="date"type="date" class="form-control" name="logout_date" required>
-        <label for="time">time</label>
-        <input  id="time"type="time" class="form-control" name="time" required>
-        <button type="submit" class="btn btn-primary">submit</button>
+        <input  id="date" class="form-control" value="{{auth()->user()->name}}" name="name" hidden >
+        <input  id="date" class="form-control" value="1" name="checkin" hidden >
+
+       <a href="{{route('checkin.attendance')}}"  type='submit'class="btn btn-success">CheckIn</a>
     </form>
+    <div class="continer">
+
+    <form action="{{route('checkout.attendance')}}">
+        @csrf
+        <h1>Name: {{auth()->user()->name}}</h1>
+
+        <input  id="date" class="form-control" value="{{auth()->user()->name}}" name="name" hidden >
+        <input  id="date" class="form-control" value="0" name="checkout" hidden >
+
+
+    </form>
+    </div>
 </div>
 @endsection
