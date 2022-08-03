@@ -16,7 +16,7 @@
     <form action="{{route('store.leave')}}" method="POST">
         @csrf
         <label for="text" >Reason</label>
-        <input  id="text"type="text" class="form-control" name="reason" required>
+        <input  id="text"type="file" class="form-control" name="reason" required>
         <label for="name" >Employee name</label><br>
         <select id="name" class="form-select" aria-label="Default select example" name="employee_name">
             <option selected>select Employee</option>

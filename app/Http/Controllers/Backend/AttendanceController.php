@@ -62,7 +62,7 @@ class AttendanceController extends Controller
     // }
     public function checkattendance (){
 
-        $attendance=Attendance::all();
+        $attendance=Attendance::OrderBy('id','desc')->paginate(5);
         // dd($attendance);
         return view('Backend.Attendance.checkin',compact('attendance'));
     }

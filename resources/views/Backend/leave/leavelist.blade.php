@@ -30,8 +30,8 @@
                 <td scope="col">{{$data->from_date}}</td>
                 <td scope="col">{{$data->to_date}}</td>
                 <td scope="col">
-                    <a class="btn btn-primary" href="{{route('edit.leave',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
-                    <a class="btn btn-success" href="{{route('views.leave',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
+                    <a class="btn btn-primary" href="{{route('edit.leave',$data->id)}}"><img src="{{url('backend/assets/icon/check2.svg')}}" alt=""></a>
+                    <a class="btn btn-success" href="{{route('views.leave',$data->id)}}"><img src="{{url('backend/assets/icon/backspace-reverse.svg')}}" alt=""></a>
                     <a  class="btn btn-danger" href="{{route('delete.leave',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
                 </td>
             </tr>

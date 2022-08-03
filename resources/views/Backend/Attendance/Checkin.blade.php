@@ -34,6 +34,6 @@
       </tbody>
     </table>
 </div>
-
+{{$attendance->links()}}
 
 @endsection

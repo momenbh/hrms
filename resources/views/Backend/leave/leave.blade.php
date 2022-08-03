@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <h1>Apply Leave</h1>
-<a href="{{route('form.leave')}}" class="btn btn-primary">Create</a>
+<a href="{{route('form.leave')}}" class="btn btn-primary">Apply</a>
 <table class="table">
     <thead>
 
@@ -31,8 +31,8 @@
             <td scope="col">{{$data->to_date}}</td>
             <td scope="col">
                 <a class="btn btn-primary" href="{{route('edit.leave',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
-                <a class="btn btn-success" href="{{route('views.leave',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
-                <a  class="btn btn-danger" href="{{route('delete.leave',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
+                <a class="btn btn-info" href="{{route('views.leave',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
+                <a  class="btn btn-success" href="{{route('delete.leave',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>
         </tr>
         @endforeach
