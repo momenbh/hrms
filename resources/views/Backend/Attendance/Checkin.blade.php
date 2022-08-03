@@ -1,16 +1,18 @@
 @extends('Backend.master')
 @section('backend_content')
 <div>
+    <div class="container">
+        <h1>Attendance List</h1>
+    </div>
     <table class="table">
       <thead>
         <tr>
             <th scope="col">id</th>
-            <th scope="col">Name</th>
-            <th scope="col">CheckIn</th>
-            <th scope="col">CheckOut</th>
-            <th scope="col">Created_at</th>
-            <th scope="col">Updateed_at</th>
-            <th scope="col">Action</th>
+                <th scope="col">Name</th>
+                <th scope="col">date</th>
+                <th scope="col">CheckIn Time</th>
+                <th scope="col">CheckIn Time</th>
+                <th scope="col">Status</th>
 
         </tr>
       </thead>
@@ -21,20 +23,17 @@
 
             <td scope="col">{{$key+1}}</td>
             <td scope="col">{{$data->name}}</td>
-            <td scope="col">{{$data->checkin}}</td>
-            <td scope="col">{{$data->checkout}}</td>
-            <td scope="col">{{$data->created_at}}</td>
-            <td scope="col">{{$data->updated_at}}</td>
-            <td scope="col">{{$data->time}}</td>
-            <td scope="col">
-            <a href="{{route('checkout.attendance')}}" class="btn btn-primary">Checkout</a>
-            </td>
+            <td scope="col">{{$data->to_date}}</td>
+            <td scope="col">{{$data->intime}}</td>
+            <td scope="col">{{$data->outtime}}</td>
+            <td scope="col">{{$data->status}}</td>
+
         </tr>
         @endforeach
 
       </tbody>
     </table>
 </div>
- {{$attendance->links()}}
+
 
 @endsection

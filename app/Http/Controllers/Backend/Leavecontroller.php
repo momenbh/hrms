@@ -69,5 +69,12 @@ class Leavecontroller extends Controller
         ]);
         return redirect()->route('view.leave');
     }
+    public function list(){
+        $employees = Employee::all();
+        $leave=Leave::OrderBy('id','desc')->paginate(5);
+
+        return view('Backend.leave.leavelist',compact('employees','leave'));
+        return redirect()->back();
+    }
 
 }

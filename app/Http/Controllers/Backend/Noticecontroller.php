@@ -65,4 +65,9 @@ class Noticecontroller extends Controller
         ]);
         return redirect()->route('view.notice');
     }
+    public function list(){
+        $notice=Notice::OrderBy('id','desc')->paginate(5);
+        return view('Backend.notice.noticelist',compact('notice'));
+        return redirect()->back();
+    }
 }

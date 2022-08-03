@@ -102,6 +102,7 @@ Route::post('/employee/update/{id}',[EmployeeController::class,'update'])->name(
 
 // leave operation
 Route::get('/leave/view',[Leavecontroller::class,'view'])->name('view.leave');
+Route::get('/leave/view/list',[Leavecontroller::class,'list'])->name('view.leavelist');
 Route::get('/leave/form',[Leavecontroller::class,'form'])->name('form.leave');
 Route::post('/leave/store',[Leavecontroller::class,'store'])->name('store.leave');
 // delete operation
@@ -118,6 +119,8 @@ Route::post('/attendance/store',[AttendanceController::class,'store'])->name('st
 Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
 Route::get('/attendance/checkoutattendance',[AttendanceController::class,'checkoutattendance'])->name('checkout.attendance');
 
+Route::get('/attendance/pages',[AttendanceController::class,'pages'])->name('page.attendance');
+
 
 // delete edit update operation for attendance
 Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('delete.attendance');
@@ -128,6 +131,7 @@ Route::post('/attendance/update/{id}',[AttendanceController::class,'update'])->n
 
 // notice operation
 Route::get('/notice/view',[Noticecontroller::class,'view'])->name('view.notice');
+Route::get('/notice/view/list',[Noticecontroller::class,'list'])->name('view.noticelist');
 Route::get('/notice/form',[Noticecontroller::class,'form'])->name('form.notice');
 Route::post('/notice/store',[Noticecontroller::class,'store'])->name('store.notice');
 // Delete  view edit update operation for notice

@@ -10,9 +10,9 @@
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Name</th>
-                <th scope="col">login_date</th>
-                <th scope="col">logout_date</th>
-                <th scope="col">time</th>
+                <th scope="col">date</th>
+                <th scope="col">CheckIn Time</th>
+                <th scope="col">CheckIn Time</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>

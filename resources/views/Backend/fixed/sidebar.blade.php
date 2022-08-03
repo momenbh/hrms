@@ -22,12 +22,18 @@
                          <li><a href="{{route('view.notice')}}">Notice</a></li>
                         <li><a href="{{route('view.holiday')}}">Holidays</a></li>
                         <li><a href="{{route('view.payroll')}}">payroll</a></li>
+                        <li><a href="{{route('checkin.attendance')}}">AttendanceList</a></li>
+                        <li><a href="{{route('view.leavelist')}}">LeaveList</a></li>
                         @endif
-                        <li><a href="{{route('view.attendance')}}">Attendance </a></li>
+
+
+                        @if(auth()->user()->role=='employee')
+                        <li><a href="{{route('page.attendance')}}">Attendance </a></li>
 
                         <li><a href="{{route('view.leave')}}"> Apply Leave</a></li>
+                        <li><a href="{{route('view.noticelist')}}"> Notice List</a></li>
                         <li><a class="dropdown-item" href="{{route('do.logout')}}">Logout</a></li>
-
+                          @endif
             </ul>
         </div>
     </div>
