@@ -34,11 +34,12 @@ class Leavecontroller extends Controller
         ]);
         // dd($request->all());
         Leave::create([
-          'reason'=>$request->reason,
+          'leave_type'=>$request->leave_type,
           'days'=>$request->days,
           'employee_name'=>$request->employee_name,
           'to_date'=>$request->to_date,
           'from_date'=>$request->from_date,
+          'reason'=>$request->reason,
         ]);
 
         return redirect()->route('view.leave');

@@ -111,6 +111,8 @@ Route::get('leave/delete/{id}',[Leavecontroller::class,'delete'])->name('delete.
 Route::get('leave/views/{id}',[Leavecontroller::class,'views'])->name('views.leave');
 Route::get('leave/edit/{id}',[Leavecontroller::class,'edit'])->name('edit.leave');
 Route::post('leave/update/{id}',[Leavecontroller::class,'update'])->name('update.leave');
+// approve leave
+
 
 // attendance operation
 // Route::get('/attendance/view',[AttendanceController::class,'view'])->name('.attendance');

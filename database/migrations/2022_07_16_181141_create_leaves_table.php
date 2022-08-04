@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('leaves', function (Blueprint $table) {
             $table->id();
             $table->string('employee_name');
-            $table->string('reason');
+            $table->string('leave_type');
             $table->string('days');
             $table->date('to_date');
             $table->date('from_date');
+            $table->string('reason');
             $table->timestamps();
         });
     }
