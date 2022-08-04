@@ -1,6 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <h1>leave List</h1>
+
 <div>
     <table class="table">
         <thead>
@@ -8,11 +9,10 @@
              <tr>
                 <th scope="col">id</th>
                 <th scope="col">Leave Type</th>
-                <th scope="col">Employee Name</th>
-                <th scope="col">days</th>
                 <th scope="col">from_date</th>
                 <th scope="col">to_date</th>
                 <th scope="col">Reason</th>
+                <th scope="col">days</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
 
@@ -21,25 +21,24 @@
              </tr>
         </thead>
         <tbody>
-            @foreach ($leave as $key=>$data)
+            @foreach ($leaves as $key=>$data)
 
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->leave_type}}</td>
-                <td scope="col">{{optional($data->employeeId)->employee_name}}</td>
-                <td scope="col">{{$data->days}}</td>
+                <td scope="col">{{optional($data->leavetyperelation)->leave_type}}</td>
                 <td scope="col">{{$data->from_date}}</td>
                 <td scope="col">{{$data->to_date}}</td>
                 <td scope="col">{{$data->reason}}</td>
-                <td scope="col">
+                <td scope="col">{{$data->days}}</td>
+                <td scope="col">{{$data->status}}
                     <div class="dropdown action-label">
                         <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-dot-circle-o text-purple"></i> pending
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Pending</a>
-                            <a class="dropdown-item" href="{{route('leave.approve')}}" data-toggle="modal" data-target="#approve_leave"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
+                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#approve_leave"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
                             <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Declined</a>
                         </div>
                     </div>
@@ -60,6 +59,6 @@
             @endforeach
         </tbody>
     </table>
-    {{$leave->links()}}
+    {{$leaves->links()}}
 </div>
 @endsection

@@ -111,8 +111,15 @@ Route::get('leave/delete/{id}',[Leavecontroller::class,'delete'])->name('delete.
 Route::get('leave/views/{id}',[Leavecontroller::class,'views'])->name('views.leave');
 Route::get('leave/edit/{id}',[Leavecontroller::class,'edit'])->name('edit.leave');
 Route::post('leave/update/{id}',[Leavecontroller::class,'update'])->name('update.leave');
-// approve leave
-
+//  leave type
+Route::get('leve/type',[Leavecontroller::class,'leavetype'])->name('view.leavetype');
+Route::get('leve/type/form',[Leavecontroller::class,'leavetypeform'])->name('form.leavetype');
+Route::post('leve/type/store',[Leavecontroller::class,'leavetypestore'])->name('store.leavetype');
+// leave type update delete view
+Route::get('leave/typedelete/{id}',[Leavecontroller::class,'typedelete'])->name('typedelete.leave');
+Route::get('leave/typeviews/{id}',[Leavecontroller::class,'typeviews'])->name('typeviews.leave');
+Route::get('leave/typeedit/{id}',[Leavecontroller::class,'typeedit'])->name('typeedit.leave');
+Route::post('leave/typeupdate/{id}',[Leavecontroller::class,'typeupdate'])->name('typeupdate.leave');
 
 // attendance operation
 // Route::get('/attendance/view',[AttendanceController::class,'view'])->name('.attendance');

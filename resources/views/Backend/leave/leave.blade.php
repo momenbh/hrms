@@ -21,7 +21,7 @@
 
          </tr>
     </thead>
-    <tbody>
+    {{-- <tbody>
         @foreach ($leave as $key=>$data)
 
 
@@ -37,12 +37,12 @@
             <td scope="col">{{$data->approved_by}}</td>
             <td scope="col">
                 <a class="btn btn-primary" href="{{route('edit.leave',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
-                {{-- <a class="btn btn-info" href="{{route('views.leave',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a> --}}
+                <a class="btn btn-info" href="{{route('views.leave',$data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>
                 <a  class="btn btn-success" href="{{route('delete.leave',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
             </td>
         </tr>
         @endforeach
-    </tbody>
+    </tbody> --}}
 </table>
-{{$leave->links()}}
+{{-- {{$leave->links()}} --}}
 @endsection

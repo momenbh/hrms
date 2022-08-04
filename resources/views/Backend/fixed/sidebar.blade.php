@@ -23,6 +23,7 @@
                         <li><a href="{{route('view.holiday')}}">Holidays</a></li>
                         <li><a href="{{route('view.payroll')}}">payroll</a></li>
                         <li><a href="{{route('checkin.attendance')}}">AttendanceList</a></li>
+                        <li><a href="{{route('view.leavetype')}}">Leave Type</a></li>
                         <li><a href="{{route('view.leavelist')}}">LeaveList</a></li>
                         @endif
 
