@@ -4,6 +4,12 @@
     <div class="container">
         <h1>Attendance List</h1>
     </div>
+    <div class="continer m-5 ">
+        <div>
+                    <a class="btn btn-success" href="{{route('view.attendance')}}">checkIn</a>
+        </div >
+
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -29,7 +35,7 @@
             <td scope="col">{{$data->outtime}}</td>
             <td scope="col">{{$data->status}}</td>
             <td scope="col">
-                <a  class="btn btn-danger" href="{{route('delete.attendance',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
+               <a href="{{route('check.attendance',$data->id)}}">Check Out</a>
 
             </td>
 
@@ -39,6 +45,6 @@
       </tbody>
     </table>
 </div>
-{{$attendance->links()}}
+
 
 @endsection

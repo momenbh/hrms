@@ -31,7 +31,7 @@ class AttendanceController extends Controller
          'status'=>$request->status,
 
         ]);
-        return redirect()->route('view.attendance');
+        return redirect()->route('list.attendance');
     }
     // delete
     public function delete($id){
@@ -48,7 +48,7 @@ class AttendanceController extends Controller
     //     $attendance=Attendance::find($id);
     //     return view('Backend.attendance.edit',compact('employees','attendance'));
     // }
-    // public function update(Request $request,$id){
+    // public function check(Request $request,$id){
     //     $attendance=Attendance::find($id);
     //     $attendance->update([
     //         'employee_name'=>$request->employee_name,
@@ -60,14 +60,34 @@ class AttendanceController extends Controller
     //     ]);
     //     return redirect()->route('view.attendance');
     // }
-    public function checkattendance (){
+    // public function checkattendance (){
 
-        $attendance=Attendance::OrderBy('id','desc')->paginate(5);
-        // dd($attendance);
-        return view('Backend.Attendance.checkin',compact('attendance'));
+    //     $attendance=Attendance::OrderBy('id','desc')->paginate(5);
+    //     // dd($attendance);
+    //     return view('Backend.Attendance.checkin',compact('attendance'));
+    // }
+    // public function checkoutattendance(){
+
+    //     return redirect()->route('view.attendance');
+    // }
+    public function check($id){
+        $attendance=Attendance::find($id);
+
+        return view('Backend.Attendance.checkout',compact('attendance'));
     }
-    public function checkoutattendance(){
+    public function checkout (Request $request,$id){
+        // dd($request);
+        $attendance=Attendance::find($id);
+        // $attendance=Attendance::first('User_id',$id);
 
-        return redirect()->route('view.attendance');
+        $attendance->update([
+            'outtime'=>$request->outtime,
+        ]);
+        // dd($attendance);
+        return redirect()->route('list.attendance');
+    }
+    public function list(){
+        $attendance=Attendance::all();
+        return view('Backend.Attendance.list',compact('attendance'));
     }
 }

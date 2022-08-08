@@ -11,33 +11,33 @@ class Leavecontroller extends Controller
 {
     public function view(){
 
-        // $leave=Leave::with('employeeId')->OrderBy('id','desc')->paginate(5);
-        // dd($leave);
-        return view('Backend.leave.leave');
+        $leaves=Leave::OrderBy('id','desc')->paginate(5);
+        return view('Backend.leave.leave',compact('leaves'));
     }
     public function form(){
         $types=Type::all();
         return view('Backend.leave.leaveform',compact('types'));
+
     }
     public function store(Request $request){
-        // dd($request);
-        // $request->validate([
-        //     'reason'=>'required|string',
-        //     'employee_name'=>'required|string',
-        //     'days'=>'required|string',
-        //     'to_date'=>'required|string',
-        //     'from_date'=>'required|string',
 
-        // ]);
-        // dd($request->all());
+            $from_date =$request->from_date;
+            $to_date =$request->to_date;
+
+            $from_date = strtotime($from_date);
+            $to_date = strtotime($to_date);
+
+            $days =($to_date-$from_date)/(60*60*24)+1;
+           
         Leave::create([
           'leave_type'=>$request->leave_type,
           'from_date'=>$request->from_date,
           'to_date'=>$request->to_date,
           'reason'=>$request->reason,
+          'days'=>$days,
         ]);
 
-        return redirect()->route('view.leavelist');
+        return redirect()->route('view.leave');
     }
     public function delete($id){
         $leave=Leave::find($id)->delete();
@@ -48,9 +48,9 @@ class Leavecontroller extends Controller
         return view('Backend.leave.view',compact('leave'));
     }
     public function edit($id){
-        $employees = Employee::all();
+
         $leave=Leave::find($id);
-        return view('Backend.leave.edit',compact('employees','leave'));
+        return view('Backend.leave.edit',compact('leave'));
 
     }
     public function update(Request $request,$id){
@@ -58,7 +58,6 @@ class Leavecontroller extends Controller
         $leave->update([
             'reason'=>$request->reason,
           'days'=>$request->days,
-          'employee_name'=>$request->employee_name,
           'to_date'=>$request->to_date,
           'from_date'=>$request->from_date,
 
@@ -67,8 +66,8 @@ class Leavecontroller extends Controller
     }
     public function list(){
 
-        $leaves=Leave::with('leavetyperelation')->OrderBy('id','desc')->paginate(5);
-
+        $leaves=Leave::with('leavetypeId')->OrderBy('id','desc')->paginate(5);
+        // dd($leaves);
         return view('Backend.leave.leavelist',compact('leaves'));
         return redirect()->back();
     }
@@ -115,5 +114,14 @@ public function typeupdate(Request $request,$id){
     ]);
     return redirect()->route('view.leavetype');
 }
+public function status(Request $request,$id){
+    $leaves=Leave::find($id);
+    // dd($leaves);
+    $leaves->update([
+     'status'=>$request->status,
+    ]);
+    return redirect()->back();
+}
+
 
 }

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('from_date');
             $table->date('to_date');
             $table->string('reason');
+            $table->string('days')->default('pendaing');
+            $table->string('status')->default('pendaing');
             $table->timestamps();
         });
     }

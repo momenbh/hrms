@@ -4,7 +4,7 @@
 <a href="{{route('form.attendance')}}" class="btn btn-primary">Create</a>
 <a href="{{route('checkin.attendance')}}" class="btn btn-primary">Checkin</a>
 
-<div>
+{{-- <div>
     <table class="table">
         <thead>
             <tr>
@@ -12,7 +12,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">date</th>
                 <th scope="col">CheckIn Time</th>
-                <th scope="col">CheckIn Time</th>
+                <th scope="col">CheckOut Time</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -40,5 +40,5 @@
 
     </table>
 </div>
-{{$attendance->links()}}
+{{$attendance->links()}} --}}
 @endsection

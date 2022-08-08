@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<div class="container">
 <head>
     <title>HR Management system</title>
     <meta charset="utf-8">
@@ -11,7 +11,8 @@
 
 </head>
 
-<body class="" style="background-image:url(backend/assets/img/hrms.jpg)">
+
+<body class="" style="background-image:url(backend/assets/img/hrms.jpg); position:static;" >
     <section>
         <div class="container">
             <div class="row justify-content-center">
@@ -81,5 +82,7 @@
         data-cf-beacon='{"rayId":"730c406a8a0f4c89","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.6.0","si":100}'
         crossorigin="anonymous"></script>
 </body>
+
+</div>
 
 </html>

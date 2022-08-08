@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Leave extends Model
 {
     protected $guarded=[];
-    public function leavetyperelation(){
-        
-        return $this->belongsto(Type::class,'name','id');
+    public function leavetypeId(){
+
+        return $this->belongsTo(Type::class,'leave_type','id');
 
     }
 

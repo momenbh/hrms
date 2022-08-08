@@ -120,22 +120,26 @@ Route::get('leave/typedelete/{id}',[Leavecontroller::class,'typedelete'])->name(
 Route::get('leave/typeviews/{id}',[Leavecontroller::class,'typeviews'])->name('typeviews.leave');
 Route::get('leave/typeedit/{id}',[Leavecontroller::class,'typeedit'])->name('typeedit.leave');
 Route::post('leave/typeupdate/{id}',[Leavecontroller::class,'typeupdate'])->name('typeupdate.leave');
+Route::post('leave/status/{id}',[Leavecontroller::class,'status'])->name('leave.status');
 
 // attendance operation
 // Route::get('/attendance/view',[AttendanceController::class,'view'])->name('.attendance');
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
+Route::get('/attendance/check/{id}',[AttendanceController::class,'check'])->name('check.attendance');
+Route::post('/attendance/checkout/{id}',[AttendanceController::class,'checkout'])->name('checkout.attendance');
 Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
 Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
-Route::get('/attendance/checkoutattendance',[AttendanceController::class,'checkoutattendance'])->name('checkout.attendance');
+// Route::getouttime('/attendance/checkoutattendance',[AttendanceController::class,'check'])->name('check.attendance');
+Route::get('/attendance/list',[AttendanceController::class,'list'])->name('list.attendance');
 
 Route::get('/attendance/pages',[AttendanceController::class,'pages'])->name('page.attendance');
 
 
 // delete edit update operation for attendance
-Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('delete.attendance');
-Route::get('/attendance/single/{id}',[AttendanceController::class,'single_view'])->name('single.attendance');
-Route::get('/attendance/edit/{id}',[AttendanceController::class,'edit'])->name('edit.attendance');
-Route::post('/attendance/update/{id}',[AttendanceController::class,'update'])->name('update.attendance');
+// Route::get('/attendance/delete/{id}',[AttendanceController::class,'delete'])->name('delete.attendance');
+// Route::get('/attendance/single/{id}',[AttendanceController::class,'single_view'])->name('single.attendance');
+// Route::get('/attendance/edit/{id}',[AttendanceController::class,'edit'])->name('edit.attendance');
+// Route::post('/attendance/update/{id}',[AttendanceController::class,'update'])->name('update.attendance');
 
 
 // notice operation

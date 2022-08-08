@@ -26,22 +26,25 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{optional($data->leavetyperelation)->leave_type}}</td>
+                <td scope="col">{{optional($data->leavetypeId)->name}}</td>
                 <td scope="col">{{$data->from_date}}</td>
                 <td scope="col">{{$data->to_date}}</td>
                 <td scope="col">{{$data->reason}}</td>
                 <td scope="col">{{$data->days}}</td>
-                <td scope="col">{{$data->status}}
-                    <div class="dropdown action-label">
-                        <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
-                            <i class="fa fa-dot-circle-o text-purple"></i> pending
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Pending</a>
-                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#approve_leave"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Declined</a>
-                        </div>
-                    </div>
+                <td scope="col">
+                   <form action="{{route('leave.status',$data->id)}}" method="POST">
+                    @csrf
+
+
+
+                            <select id="name" class="form-select" aria-label="Default select example" name="status">
+                                <option selected >selete status</option>
+                                <option  value="approve">Approved</option>
+                                <option  value="cancle">Cancle</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary">refresh</button>
+
+                   </form>
                 </td>
                 <td scope="col">
                     <div class="dropdown dropdown-action">

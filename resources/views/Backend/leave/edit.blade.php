@@ -5,15 +5,6 @@
         @csrf
         <label for="text" >Reason</label>
         <input  id="text"type="text" class="form-control" name="reason" value="{{$leave->reason}}">
-        <label for="name" >Employee name</label><br>
-        <select id="name" class="form-select" aria-label="Default select example" name="employee_name">
-            <option selected>select Employee</option>
-
-            @foreach ($employees as $data)
-                <option value="{{$data->id}}">{{$data->employee_name}}</option>
-            @endforeach
-          </select>
-          <br>
         <label for="number" >days</label>
         <input  id="number"type="number" class="form-control" name="days"  min="1" value="{{$leave->days}}">
         <label for="date" >To Date</label>

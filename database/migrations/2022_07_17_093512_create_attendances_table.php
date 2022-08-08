@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('to_date');
             $table->string('intime')->nullable();
-            $table->string('outtime')->nullable();
+            $table->string('outtime')->default('00');
             $table->string('status')->default('absent');
             $table->timestamps();
         });

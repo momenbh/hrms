@@ -6,7 +6,8 @@
                 <a class="btn btn-success" href="{{route('view.attendance')}}">checkIn</a>
     </div >
     <div class="mt-2">
-                <a class="btn btn-warning" href="">CheckOut</a>
+
+                <a class="btn btn-warning" href="{{route('check.attendance',Auth()->user()->id)}}">CheckOut</a>
     </div>
 </div>
 
