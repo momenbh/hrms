@@ -6,21 +6,21 @@ use App\Models\Employee;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use GuzzleHttp\promise\Create;
+use Illuminate\Support\Facades\Auth;
 
 class AttendanceController extends Controller
 {
     public function pages(){
-        return view('Backend.Attendance.attendance_page');
+        $attendance=Attendance::all();
+        return view('Backend.Attendance.attendance_page',compact('attendance'));
     }
     public function view(){
         $attendance=Attendance::with('employeerelation')->OrderBy('id','desc')->paginate(5);
 // dd($attendance);
         return view('Backend.attendance.attendanceform',compact('attendance'));
     }
-    // public function form(){
-    //     $employees=Employee::all();
-    //     return view('Backend.Attendance.attendanceform',compact('employees'));
-    // }
+
     public function store(Request $request){
 
         Attendance::create([
@@ -31,7 +31,7 @@ class AttendanceController extends Controller
          'status'=>$request->status,
 
         ]);
-        return redirect()->route('list.attendance');
+        return redirect()->back();
     }
     // delete
     public function delete($id){
@@ -60,34 +60,31 @@ class AttendanceController extends Controller
     //     ]);
     //     return redirect()->route('view.attendance');
     // }
-    // public function checkattendance (){
+    public function checkattendance (){
 
-    //     $attendance=Attendance::OrderBy('id','desc')->paginate(5);
-    //     // dd($attendance);
-    //     return view('Backend.Attendance.checkin',compact('attendance'));
-    // }
+        $attendance=Attendance::OrderBy('id','desc')->paginate(5);
+        // dd($attendance);
+        return view('Backend.Attendance.checkin',compact('attendance'));
+    }
     // public function checkoutattendance(){
 
     //     return redirect()->route('view.attendance');
     // }
     public function check($id){
-        $attendance=Attendance::find($id);
+        $attendance=Auth()->user()->id;
 
         return view('Backend.Attendance.checkout',compact('attendance'));
     }
     public function checkout (Request $request,$id){
         // dd($request);
-        $attendance=Attendance::find($id);
+        // $attendance=Attendance::find($id);
         // $attendance=Attendance::first('User_id',$id);
 
-        $attendance->update([
+       Attendance::where('user_id', Auth::id())->update([
             'outtime'=>$request->outtime,
         ]);
         // dd($attendance);
-        return redirect()->route('list.attendance');
+        return redirect()->back();
     }
-    public function list(){
-        $attendance=Attendance::all();
-        return view('Backend.Attendance.list',compact('attendance'));
-    }
+
 }

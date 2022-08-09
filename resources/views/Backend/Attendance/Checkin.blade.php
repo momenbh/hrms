@@ -29,7 +29,7 @@
             <td scope="col">{{$data->outtime}}</td>
             <td scope="col">{{$data->status}}</td>
             <td scope="col">
-                <a  class="btn btn-danger" href="{{route('delete.attendance',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a>
+                {{-- <a  class="btn btn-danger" href="{{route('delete.attendance',$data->id)}}"><img src="{{url('backend/assets/icon/delete.svg')}}" alt=""></a> --}}
 
             </td>
 
