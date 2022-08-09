@@ -13,7 +13,7 @@
     @endif
 </div>
 
-<form action="{{route('store.employee')}}" method="POST">
+<form action="{{route('store.employee')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="name">Employee Name *</label>
     <input  id="name"type="text" class="form-control" name="employee_name" required>
@@ -25,6 +25,8 @@
     <input  id="date"type="date" class="form-control" name="date_of_birth">
     <label for="integer">Age</label>
     <input  id="integer"type="number" class="form-control" name="age" required min="1" max="50">
+    <label for="image">Image</label>
+    <input  id="image"type="file" class="form-control" name="image" >
     <select name="department" id="">
         <option value="">Select Department</option>
         @foreach ($department as $data)

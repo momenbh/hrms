@@ -22,11 +22,18 @@ class EmployeeController extends Controller
         return view('Backend.employee.employeeform', compact('department','designation'));
     }
     public function store(Request $request){
+        // dd($request->image);
         $request->validate([
             'employee_name'=>'required|string',
             'phone_number'=>'required|string',
             'employee_email'=>'required|string',
         ]);
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $fileRename = "Employee_" . date('Ymdhis') .rand(1, 1000) . '.' . $file->getClientOriginalExtension();
+            $file -> storeAs('Employee/',  $fileRename);
+        }
+
         Employee::create([
           'employee_name'=>$request->employee_name,
           'phone_number'=>$request->phone_number,
@@ -35,6 +42,7 @@ class EmployeeController extends Controller
           'age'=>$request->age,
           'department_id' => $request->department,
           'designation' =>$request->designation,
+          'image' => $fileRename,
 
         ]);
         return redirect()->route('view.employee');
@@ -50,7 +58,7 @@ class EmployeeController extends Controller
 
     }
     public function edit($id){
-      
+
         $department = Department:: all();
         $designation = Designation::all();
         $employees=Employee::find($id);

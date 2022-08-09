@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->date('date_of_birth');
             $table->double('age');
+            $table->text('image')->nullable();
             $table->string('department_id')->nullable();
             $table->timestamps();
         });

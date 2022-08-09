@@ -26,8 +26,6 @@ class AttendanceController extends Controller
         Attendance::create([
          'user_id'=>$request->user_id,
          'name'=>$request->name,
-         'to_date'=>$request->to_date,
-         'intime'=>$request->intime,
          'status'=>$request->status,
 
         ]);

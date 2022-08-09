@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('name');
-            $table->date('to_date');
+            $table->date('to_date')->nullable();
             $table->string('intime')->nullable();
             $table->string('outtime')->default('00');
             $table->string('status')->default('absent');

@@ -13,6 +13,7 @@
                 <th scope="col">Department Name</th>
                 <th scope="col">Designation</th>
                 <th scope="col">Date_of_birth</th>
+                <th scope="col">Image</th>
                 <th scope="col">Age</th>
                 <th scope="col">Action</th>
             </tr>
@@ -20,7 +21,6 @@
         <tbody>
             @foreach ($employees as $key=>$data)
 
-            {{-- @dd($data) --}}
             <tr>
                 <td scope="col">{{$key+1}}</td>
                 <td scope="col">{{$data->employee_name}}</td>
@@ -29,6 +29,10 @@
                 <td scope="col">{{optional($data->department)->department_name}}</td>
                 <td scope="col">{{optional($data->designationRelation)->designation}}</td>
                 <td scope="col">{{$data->date_of_birth}}</td>
+                <td scope="col">
+                    <img style="width: 100px; height:90px;" src="{{url('/uploads/Employee/') .'/' . $data->image}}" alt="">
+                </td>
+
                 <td scope="col">{{$data->age}}</td>
                 <td scope="col">
                     <a class="btn btn-primary" href="{{route('edit.employee',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>

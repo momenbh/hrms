@@ -20,15 +20,12 @@
         <h1>Name: {{auth()->user()->name}}</h1>
         <input  id="date" class="form-control" value="{{auth()->user()->id}}" name="user_id" hidden >
         <input  id="date" class="form-control" value="{{auth()->user()->name}}" name="name" hidden >
-        <label for="date">To date</label>
-         <input  type="date" class="form-control" name='to_date' required>
-         <label for="time">Time</label>
-         <input  type="time" class="form-control" name='intime' required>
-         <select name="status" class="form-control form-control-sm mt-2">
+
+         <select name="status" class="form-control form-control-sm mt-2" hidden>
             <option value="present">Present</option>
           </select>
 
-       <button   type='submit'class="btn btn-success mt-2">Submit</button>
+       <button   type='submit'class="btn btn-success mt-2">Check In</button>
     </form>
    </div>
 
