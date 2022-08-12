@@ -15,32 +15,21 @@
 
 
    <div class="container">
-    <form action="{{route('store.attendance')}}" method="POST">
-        @csrf
+    
         <h1>Name: {{auth()->user()->name}}</h1>
-        <input  id="date" class="form-control" value="{{auth()->user()->id}}" name="user_id" hidden >
-        <input  id="date" class="form-control" value="{{auth()->user()->name}}" name="name" hidden >
+        
 
-         <select name="status" class="form-control form-control-sm mt-2" hidden>
-            <option value="present">Present</option>
-          </select>
-
-       <button   type='submit'class="btn btn-success mt-2">Check In</button>
-    </form>
+       <a href='{{route('store.attendance')}}' class="btn btn-success mt-2">Check In</a>
+    
    </div>
 
-    {{-- <div class="continer">
+   <div class="mt-2">
 
-      <form action="{{route('checkout.attendance')}}">
-        @csrf
-        <h1>Name: {{auth()->user()->name}}</h1>
-
-        <input  id="date" class="form-control" value="{{auth()->user()->name}}" name="name" hidden >
-        <input  id="date" class="form-control" value="0" name="checkout" hidden >
-        <a href="{{route('checkout.attendance')}}" class="btn btn-primary">Checkout</a>
+    <a class="btn btn-warning" href="{{route('check.attendance',Auth()->user()->id)}}">CheckOut</a>
+</div>
+   <div>
 
 
-      </form>
-    </div> --}}
+ 
 
 @endsection

@@ -54,7 +54,7 @@ Route::group(['middleware'=> 'auth'], function (){
 Route::get('/logout',[LoginController::class,'logout'])->name('do.logout');
 
 
-// dashboard
+// // dashboard
 Route::get('/employe/dashboard',[Dashboardcontroller::class,'dashboard'])->name('employee.dashboard');
 Route::get('/admin/dashboard',[Dashboardcontroller::class,'index'])->name('dashboard');
 // department operation
@@ -127,7 +127,7 @@ Route::post('leave/status/{id}',[Leavecontroller::class,'status'])->name('leave.
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
 Route::get('/attendance/check/{id}',[AttendanceController::class,'check'])->name('check.attendance');
 Route::post('/attendance/checkout/{id}',[AttendanceController::class,'checkout'])->name('checkout.attendance');
-Route::post('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
+Route::get('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
 Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
 // Route::getouttime('/attendance/checkoutattendance',[AttendanceController::class,'check'])->name('check.attendance');
 Route::get('/attendance/list',[AttendanceController::class,'list'])->name('list.attendance');

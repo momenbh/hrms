@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Employee;
+use Carbon\Carbon;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use GuzzleHttp\promise\Create;
+use Attribute;
 use Illuminate\Support\Facades\Auth;
+// use Brian2694\Toastr\Facades\Toastr;
 
 class AttendanceController extends Controller
 {
@@ -16,31 +18,45 @@ class AttendanceController extends Controller
         return view('Backend.Attendance.attendance_page',compact('attendance'));
     }
     public function view(){
-        $attendance=Attendance::with('employeerelation')->OrderBy('id','desc')->paginate(5);
+        $attendance=Attendance::OrderBy('id','desc')->paginate(5);
 // dd($attendance);
         return view('Backend.attendance.attendanceform',compact('attendance'));
     }
 
-    public function store(Request $request){
+    public function store(){
+
+        //check user has check in
+        $attendance=Attendance::whereDate('created_at',date('Y-m-d'))
+                        ->where('user_id',auth()->user()->id)->first();
+
+        
+        if($attendance)
+        {
+
+            Toastr::error('checkIn already done.', 'success');
+            return redirect()->back();
+
+        }
 
         Attendance::create([
-         'user_id'=>$request->user_id,
-         'name'=>$request->name,
-         'status'=>$request->status,
-
+         'user_id'=>auth()->user()->id,
+         'name'=>auth()->user()->name,
         ]);
-        return redirect()->back();
+        Toastr::success('checkIn done', 'success');
+
+        return redirect()->route('page.attendance');
+        // return redirect()->route('check.attendance');
     }
     // delete
-    public function delete($id){
-        $attendance=Attendance::find($id)->delete();
-        return redirect()->back();
+    // public function delete($id){
+    //     $attendance=Attendance::find($id)->delete();
+    //     return redirect()->back();
 
-    }
-    public function single_view($id){
-        $attendance=Attendance::find($id);
-        return view('Backend.Attendance.view',compact('attendance'));
-    }
+    // }
+    // public function single_view($id){
+    //     $attendance=Attendance::find($id);
+    //     return view('Backend.Attendance.view',compact('attendance'));
+    // }
     // public function edit($id){
     //     $employees=Employee::all();
     //     $attendance=Attendance::find($id);
@@ -70,7 +86,6 @@ class AttendanceController extends Controller
     // }
     public function check($id){
         $attendance=Auth()->user()->id;
-
         return view('Backend.Attendance.checkout',compact('attendance'));
     }
     public function checkout (Request $request,$id){
@@ -79,10 +94,12 @@ class AttendanceController extends Controller
         // $attendance=Attendance::first('User_id',$id);
 
        Attendance::where('user_id', Auth::id())->update([
-            'outtime'=>$request->outtime,
+            // 'outtime'=>$request->outtime,
+            'outtime'=>Carbon::now(),
         ]);
         // dd($attendance);
-        return redirect()->back();
+        Toastr::success('checkOut done', 'success');
+        return redirect()->route('page.attendance');
     }
 
 }

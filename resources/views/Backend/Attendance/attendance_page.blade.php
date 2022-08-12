@@ -6,7 +6,7 @@
 
     <div>
         {{-- @dd($attendance) --}}
-                <a class="btn btn-success" href="{{route('view.attendance')}}">checkIn</a>
+                {{-- <a class="btn btn-success" href="{{route('view.attendance')}}">checkIn</a> --}}
     </div >
 
     <div class="mt-2">

@@ -30,10 +30,10 @@
 
                         @if(auth()->user()->role=='employee')
 
-                         <li><a href="{{route('page.attendance')}}">Attendance </a></li>
+                         <li><a href="{{route('view.attendance')}}">Attendance </a></li>
                         <li><a href="{{route('view.leave')}}"> Apply Leave</a></li>
                         <li><a href="{{route('view.noticelist')}}"> Notice List</a></li>
-                        
+
                         <li><a class="dropdown-item" href="{{route('do.logout')}}">Logout</a></li>
 
                           @endif
