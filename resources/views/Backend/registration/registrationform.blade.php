@@ -19,7 +19,7 @@
         <div class="col-md-8 col-lg-8 my-5">
             <form action="{{route('store.registration')}}" method="POST">
                 @csrf
-                <label for="name">User Nmae</label>
+                <label for="name">User Name</label>
                 <input id="name" type="text" class="form-control" name='name'>
 
                 <label for="email">Email</label>

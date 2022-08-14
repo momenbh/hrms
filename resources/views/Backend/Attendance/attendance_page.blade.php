@@ -5,13 +5,13 @@
 
 
     <div>
-        {{-- @dd($attendance) --}}
-                {{-- <a class="btn btn-success" href="{{route('view.attendance')}}">checkIn</a> --}}
-    </div >
+        {{-- @dd($attendance) --}} 
+                <a class="btn btn-success" href="{{route('view.attendance')}}">checkIn</a> 
+    
 
-    <div class="mt-2">
+     <div class="mt-2">
 
-                <a class="btn btn-warning" href="{{route('check.attendance',Auth()->user()->id)}}">CheckOut</a>
+        {{-- <a class="btn btn-warning" href="{{route('check.attendance',Auth()->user()->id)}}">CheckOut</a> --}}
     </div>
 </div>
 

@@ -125,14 +125,14 @@ Route::post('leave/status/{id}',[Leavecontroller::class,'status'])->name('leave.
 // attendance operation
 // Route::get('/attendance/view',[AttendanceController::class,'view'])->name('.attendance');
 Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.attendance');
-Route::get('/attendance/check/{id}',[AttendanceController::class,'check'])->name('check.attendance');
-Route::post('/attendance/checkout/{id}',[AttendanceController::class,'checkout'])->name('checkout.attendance');
+// Route::get('/attendance/check/{id}',[AttendanceController::class,'check'])->name('check.attendance');
+Route::get('/attendance/checkout/{id}',[AttendanceController::class,'checkout'])->name('checkout.attendance');
 Route::get('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
 Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
 // Route::getouttime('/attendance/checkoutattendance',[AttendanceController::class,'check'])->name('check.attendance');
-Route::get('/attendance/list',[AttendanceController::class,'list'])->name('list.attendance');
+// Route::get('/attendance/list',[AttendanceController::class,'list'])->name('list.attendance');
 
-Route::get('/attendance/pages',[AttendanceController::class,'pages'])->name('page.attendance');
+// Route::get('/attendance/pages',[AttendanceController::class,'pages'])->name('page.attendance');
 
 
 // delete edit update operation for attendance

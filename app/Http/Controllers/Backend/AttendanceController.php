@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AttendanceController extends Controller
 {
-    public function pages(){
-        $attendance=Attendance::all();
-        return view('Backend.Attendance.attendance_page',compact('attendance'));
-    }
+    // public function pages(){
+    //     $attendance=Attendance::all();
+
+    //     return view('Backend.Attendance.attendance_page',compact('attendance'));
+    // }
     public function view(){
         $attendance=Attendance::OrderBy('id','desc')->paginate(5);
 // dd($attendance);
@@ -41,10 +42,11 @@ class AttendanceController extends Controller
         Attendance::create([
          'user_id'=>auth()->user()->id,
          'name'=>auth()->user()->name,
+         'status'=>'present',
         ]);
         Toastr::success('checkIn done', 'success');
 
-        return redirect()->route('page.attendance');
+        return redirect()->back();
         // return redirect()->route('check.attendance');
     }
     // delete
@@ -88,18 +90,22 @@ class AttendanceController extends Controller
         $attendance=Auth()->user()->id;
         return view('Backend.Attendance.checkout',compact('attendance'));
     }
-    public function checkout (Request $request,$id){
+    public function checkout ($id){
         // dd($request);
         // $attendance=Attendance::find($id);
         // $attendance=Attendance::first('User_id',$id);
 
-       Attendance::where('user_id', Auth::id())->update([
-            // 'outtime'=>$request->outtime,
-            'outtime'=>Carbon::now(),
-        ]);
+       
         // dd($attendance);
-        Toastr::success('checkOut done', 'success');
-        return redirect()->route('page.attendance');
+       
+            Attendance::where('user_id', Auth::id())->update([
+                // 'outtime'=>$request->outtime,
+                'outtime'=>Carbon::now(),
+            ]);
+            Toastr::success('checkOut done', 'success');
+           return redirect()->route('view.attendance');
+        
     }
+    
 
 }

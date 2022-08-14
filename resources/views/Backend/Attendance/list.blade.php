@@ -1,4 +1,4 @@
-@extends('Backend.master')
+{{-- @extends('Backend.master')
 @section('backend_content')
 <div>
     <div class="container">
@@ -24,9 +24,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr> --}}
           {{-- @dd($attendance) --}}
-              @foreach ($attendance as $key=>$data )
+              {{-- @foreach ($attendance as $key=>$data )
 
               <td scope="col">{{$key+1}}</td>
               <td scope="col">{{$data->name}}</td>
@@ -47,4 +47,4 @@
 </div>
 
 
-@endsection
+@endsection --}}

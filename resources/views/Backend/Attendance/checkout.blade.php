@@ -1,4 +1,4 @@
-@extends('Backend.master')
+{{-- @extends('Backend.master')
 @section('backend_content')
 <div class="container">
     <h1>Name: {{auth()->user()->name}}</h1>
@@ -11,4 +11,4 @@
 </form>
 </div>
 
-@endsection
+@endsection --}}
