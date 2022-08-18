@@ -1,6 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>Add Department</h1>
+<div style="padding: 10px">
+    <h1>Add Department</h1>
 <a href="{{route('form.department')}}" class="btn btn-primary">Create</a>
 <table class="table">
     <thead>
@@ -33,6 +34,7 @@
     </tbody>
 </table>
 {{$department->links()}}
+</div>
 @endsection
 
 

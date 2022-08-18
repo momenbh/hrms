@@ -32,7 +32,7 @@
    <div class="mt-2">
 
 @if(!$checkOut)
-        <a class="btn btn-warning" style="margin-left:15px" href="{{route('checkout.attendance',Auth()->user()->id)}}">CheckOut</a>
+        <a class="btn btn-warning mt-2" style="margin-left:10px" href="{{route('checkout.attendance',Auth()->user()->id)}}">CheckOut</a>
 @endif
 
     </div>

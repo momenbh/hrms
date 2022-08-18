@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <div>
-    <form action="{{route('store.leave')}}" method="POST">
+    <form action="{{route('store.leave')}}" method="POST" style="padding: 75px">
         @csrf
         <label for="text" >Leave Type</label><br>
 
@@ -20,7 +20,7 @@
         <label for="text" >Reason</label>
         <input  id="text"type="text" class="form-control" name="reason" required>
 
-        <button type="submit" class="btn btn-primary">submit</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px">submit</button>
 
     </form>
 </div>

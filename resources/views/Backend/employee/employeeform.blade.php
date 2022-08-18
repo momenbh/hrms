@@ -13,7 +13,7 @@
     @endif
 </div>
 
-<form action="{{route('store.employee')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('store.employee')}}" method="POST" enctype="multipart/form-data" style="padding: 75px;">
     @csrf
     <label for="name">Employee Name *</label>
     <input  id="name"type="text" class="form-control" name="employee_name" required>
@@ -38,8 +38,8 @@
         @foreach ($designation as $data)
             <option value="{{$data->id}}">{{$data->designation}}</option>
         @endforeach
-    </select>
-    <button class="btn btn-primary" type="submit">create</button>
+    </select><br>
+    <button class="btn btn-primary" type="submit" style="margin-top: 20px">create</button>
 
 
 </form>

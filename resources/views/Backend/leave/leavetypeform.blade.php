@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <div>
-    <form action="{{route('store.leavetype')}}" method="POST">
+    <form action="{{route('store.leavetype')}}" method="POST" style="padding: 75px">
         @csrf
         <label for="text">Name</label>
         <input  id="text"type="text" class="form-control" name="name">
@@ -12,7 +12,7 @@
         </select>
         <label for="number">Balance</label>
         <input  id="number"type="number" class="form-control" name="balance">
-        <button type="submit" class="btn btn-primary">create</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px">create</button>
     </form>
 </div>
 

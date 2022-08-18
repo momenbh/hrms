@@ -10,7 +10,7 @@
         </ul>
     </div>
 @endif
-<form action="{{route('store.department')}}" method="POST">
+<form action="{{route('store.department')}}" method="POST" style="padding: 75px;>
     @csrf
     <label for="name">Department Name*</label>
     <input   id="name"type="text" class="form-control" name='department_name' required>
@@ -24,7 +24,7 @@
     <label for="email">Department Email</label>
     <input  id="email"type="email" class="form-control" name='department_email' required>
 
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Create</button>
 </form>
 </div>
 @endsection

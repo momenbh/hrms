@@ -15,12 +15,10 @@ return new class extends Migration
     {
         Schema::create('notices', function (Blueprint $table) {
             $table->id();
-            $table->string('new_notice');
-            $table->string('govement_notice');
-            $table->string('department_notice');
-            $table->string('holiday_notice');
-            $table->string('payroll_notice');
-            $table->string('notice_time');
+            $table->string('department_notice')->nullable();
+            $table->string('holiday_notice')->nullable();
+            $table->string('payroll_notice')->nullable();
+            $table->string('notice_time')->nullable();
             $table->timestamps();
         });
     }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Notice;
+use App\Models\Holiday;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class Noticecontroller extends Controller
 {
@@ -17,19 +18,17 @@ class Noticecontroller extends Controller
     }
     public function store(Request $request){
         // dd($request->all());
-        $request->validate([
-         'new_notice'=>'required|string',
-         'govement_notice'=>'required|string',
-         'department_notice'=>'required|string',
-         'holiday_notice'=>'required|string',
-         'payroll_notice'=>'required|string',
-         'notice_time'=>'required|string',
+        // $request->validate([
+        //  'new_notice'=>'required|string',
+        //  'govement_notice'=>'required|string',
+        //  'department_notice'=>'required|string',
+        //  'holiday_notice'=>'required|string',
+        //  'payroll_notice'=>'required|string',
+        //  'notice_time'=>'required|string',
 
 
-        ]);
+        // ]);
         Notice::create([
-         'new_notice'=>$request->new_notice,
-         'govement_notice'=>$request->govement_notice,
          'department_notice'=>$request->department_notice,
          'holiday_notice'=>$request->holiday_notice,
          'payroll_notice'=>$request->payroll_notice,

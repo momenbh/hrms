@@ -1,6 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>Add admin</h1>
+<div style="padding: 10px">
+    <h1>Add admin</h1>
 <a href="{{route('form.admin')}}" class="btn btn-primary">Create</a>
 <table class="table">
     <thead>
@@ -35,5 +36,6 @@
     </tbody>
 </table>
 {{$admins->links()}}
+</div>
 @endsection
 

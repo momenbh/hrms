@@ -1,6 +1,6 @@
 @extends('Backend.master')
 @section('backend_content')
-<div>
+{{-- <div>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul class="list-unstyled">
@@ -9,8 +9,8 @@
             @endforeach
         </ul>
     </div>
-@endif
-<form action="{{route('store.form')}}" method="POST">
+@endif --}}
+<form action="{{route('store.form')}}" method="POST" style="padding: 75px;">
     @csrf
     <label for="number">payment</label>
     <input type="text" id="number"  class="form-control" name="payment" required>
@@ -22,13 +22,13 @@
         @endforeach
       </select><br>
     <label for="number">Basic payment </label>
-    <input type="text" id="number"  class="form-control" name="basic_payment" required>
+    <input type="text" id="number"  class="form-control" name="basic_payment">
     <label for="number">overtime payment</label>
-    <input type="text" id="number" class="form-control" name="overtime_payment" required>
+    <input type="text" id="number" class="form-control" name="overtime_payment">
     <label for="number">Bouns</label>
-    <input type="text" id="number"class="form-control" name="bouns" required>
+    <input type="text" id="number"class="form-control" name="bouns">
     <label for="text">date</label>
-    <input type="date" id="text" class="form-control" name="date" required>
-    <button type="submit" class="btn btn-success">Cretae</button>
+    <input type="date" id="text" class="form-control" name="date"required>
+    <button type="submit" class="btn btn-success" style="margin-top: 20px">Cretae</button>
 </form>
 @endsection

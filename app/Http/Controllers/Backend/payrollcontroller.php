@@ -21,16 +21,14 @@ class payrollcontroller extends Controller
     }
     public function store(Request $request){
         // dd($request->all());
-        $request->validate([
-            'employee_name'=>'required|string',
-            'payment'=>'required|string',
-            'basic_payment'=>'required|string',
-            'overtime_payment'=>'required|string',
-            'bouns'=>'required|string',
-            'date'=>'required|date',
+        // $request->validate([
+        //     'employee_name'=>'required|string',
+        //     'payment'=>'required|string',
+        //     'basic_payment'=>'required|string',
+        //     'date'=>'required|date',
 
 
-        ]);
+        // ]);
         Payroll::create([
             'payment'=>$request->payment,
             'employee_name'=>$request->employee_name,

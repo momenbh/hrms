@@ -10,7 +10,7 @@
         </ul>
     </div>
 @endif
-    <form action="{{route('store.designation')}}" method="post">
+    <form action="{{route('store.designation')}}" method="post" style="padding: 75px;">
         @csrf
         <label for="name" >Department name</label>
         <br>
@@ -29,7 +29,7 @@
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
         </select>
-        <button type="submit" class="btn btn-primary">create</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px">create</button>
     </form>
 </div>
 @endsection

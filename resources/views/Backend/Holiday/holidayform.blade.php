@@ -10,7 +10,7 @@
         </ul>
     </div>
 @endif
-    <form action="{{route('store.holiday')}}" method="POST">
+    <form action="{{route('store.holiday')}}" method="POST" style="padding: 75px;">
         @csrf
         <label for="string">Title</label>
         <input  id="string"type="text" class="form-control"name="title" required>
@@ -18,7 +18,7 @@
         <input  id="text2"type="date" class="form-control"name="holiday_date" required>
         <label for="text3">day</label>
         <input  id="text3"type="number" class="form-control"name="day" required min="1">
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" style="margin-top: 20px">Submit</button>
     </form>
 </div>
 @endsection

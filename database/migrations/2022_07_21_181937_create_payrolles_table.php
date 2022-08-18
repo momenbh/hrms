@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('employee_name');
             $table->double('payment');
-            $table->double('basic_payment');
-            $table->double('overtime_payment');
-            $table->double('bouns');
+            $table->double('basic_payment')->nullable();
+            $table->double('overtime_payment')->nullable();
+            $table->double('bouns')->nullable();
             $table->date('date');
             $table->timestamps();
         });
