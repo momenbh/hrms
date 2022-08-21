@@ -8,9 +8,9 @@
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Employee Name</th>
-                <th scope="col">payment</th>
-                <th scope="col">basic_payment</th>
-                <th scope="col">overtime_payment</th>
+                <th scope="col">salary</th>
+                <th scope="col">basic_salary</th>
+                <th scope="col">overtime_salary</th>
                 <th scope="col">bouns</th>
                 <th scope="col">date</th>
                 <th scope="col">Action</th>
@@ -22,11 +22,11 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{optional($data->employeerelation)->employee_name}}</td>
+                <td scope="col">{{optional($data->user)->name}}</td>
                 {{-- <td scope="col">{{$data->employee_name}}</td> --}}
-                <td scope="col">{{$data->payment}}</td>
-                <td scope="col">{{$data->basic_payment}}</td>
-                <td scope="col">{{$data->overtime_payment}}</td>
+                <td scope="col">{{$data->salary}}</td>
+                <td scope="col">{{$data->basic_salary}}</td>
+                <td scope="col">{{$data->overtime_salary}}</td>
                 <td scope="col">{{$data->bouns}}</td>
                 <td scope="col">{{$data->date}}</td>
                 <td scope="col">

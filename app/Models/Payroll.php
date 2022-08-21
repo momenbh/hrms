@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Payroll extends Model
 {
     protected $guarded=[];
-    public function  employeerelation(){
+    public function  user(){
 
-        return $this->belongsTo(Employee::class, 'employee_name', 'id');
+        return $this->belongsTo(User::class, 'employee_id', 'id');
     }
 }

@@ -23,9 +23,9 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->employee_name}}</td>
+                <td scope="col">{{$data->name}}</td>
                 <td scope="col">{{$data->phone_number}}</td>
-                <td scope="col">{{$data->employee_email}}</td>
+                <td scope="col">{{$data->email}}</td>
                 <td scope="col">{{optional($data->department)->department_name}}</td>
                 <td scope="col">{{optional($data->designationRelation)->designation}}</td>
                 <td scope="col">{{$data->date_of_birth}}</td>

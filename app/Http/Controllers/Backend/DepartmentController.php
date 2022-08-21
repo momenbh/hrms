@@ -31,6 +31,7 @@ class DepartmentController extends Controller
             'department_email'=>$request->department_email,
 
         ]);
+       
         return redirect()->route('view.department');
     }
     public function delete($id){

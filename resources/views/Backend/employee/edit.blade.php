@@ -4,11 +4,11 @@
     <form action="{{route('update.employee',$employees->id)}}" method="POST">
         @csrf
         <label for="name">Employee Name </label>
-    <input  id="name"type="text" class="form-control" name="employee_name" value="{{$employees->employee_name}}">
+    <input  id="name"type="text" class="form-control" name="employee_name" value="{{$employees->name}}">
     <label for="number">Phone Number</label>
     <input  id="number"type="text" class="form-control" name="phone_number" value="{{$employees->phone_number}}">
     <label for="email">Employee Email</label>
-    <input  id="email"type="email" class="form-control" name="employee_email" value="{{$employees->employee_email}}">
+    <input  id="email"type="email" class="form-control" name="employee_email" value="{{$employees->email}}">
     <label for="date">Date OF birth</label>
     <input  id="date"type="date" class="form-control" name="date_of_birth" value="{{$employees->date_of_birth}}">
     <label for="integer">Age</label>

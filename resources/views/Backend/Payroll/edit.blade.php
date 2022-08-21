@@ -2,19 +2,19 @@
 @section('backend_content')
 <form action="{{route('update.payroll',$payrolls->id)}}" method="POST">
     @csrf
-    <label for="number">payment</label>
-    <input type="text" id="number"  class="form-control" name="payment" value="{{$payrolls->payment}}">
-    <select id="name" class="form-select" aria-label="Default select example" name="employee_name">
+    <label for="number">Salary</label>
+    <input type="text" id="number"  class="form-control" name="salary" value="{{$payrolls->salary}}">
+    <select id="name" class="form-select" aria-label="Default select example" name="employee_id">
         <option selected>select Employee</option>
 
         @foreach ($employees as $data)
-            <option value="{{$data->id}}">{{$data->employee_name}}</option>
+            <option value="{{$data->id}}">{{$data->name}}</option>
         @endforeach
       </select>
-    <label for="number">Basic payment </label>
-    <input type="text" id="number"  class="form-control" name="basic_payment" value="{{$payrolls->basic_payment}}">
-    <label for="number">overtime payment</label>
-    <input type="text" id="number" class="form-control" name="overtime_payment" value="{{$payrolls->overtime_payment}}">
+    <label for="number">Basic Salary</label>
+    <input type="text" id="number"  class="form-control" name="basic_salary" value="{{$payrolls->basic_salary}}">
+    <label for="number">overtime Salary</label>
+    <input type="text" id="number" class="form-control" name="overtime_salary" value="{{$payrolls->overtime_salary}}">
     <label for="number">Bouns</label>
     <input type="text" id="number"class="form-control" name="bouns" value="{{$payrolls->bouns}}">
     <label for="text">date</label>

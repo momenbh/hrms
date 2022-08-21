@@ -24,18 +24,18 @@ class UsersTableSeeder extends Seeder
              'role'=>'admin',
 
        ]);
-       User::create([
+    //    User::create([
 
-        'name'=>'abul',
-        'email'=>'abul@gmail.com',
-        'password'=>bcrypt('123456'),
-       ]);
-       User::create([
+    //     'name'=>'abul',
+    //     'email'=>'abul@gmail.com',
+    //     'password'=>bcrypt('123456'),
+    //    ]);
+    //    User::create([
 
-        'name'=>'babul',
-        'email'=>'babul@gmail.com',
-        'password'=>bcrypt('12345'),
-       ]);
+    //     'name'=>'babul',
+    //     'email'=>'babul@gmail.com',
+    //     'password'=>bcrypt('12345'),
+    //    ]);
 
     }
 

@@ -10,21 +10,23 @@
         </ul>
     </div>
 @endif
-<form action="{{route('store.department')}}" method="POST" style="padding: 75px;>
+
+
+<form action="{{route('store.department')}}" method="post" style="padding: 75px;">
     @csrf
     <label for="name">Department Name*</label>
-    <input   id="name"type="text" class="form-control" name='department_name' required>
+     <input   id="name" type="text" class="form-control" name='department_name' required>
 
-    <label for="type">phone number*</label>
-    <input  id="type" type="text" class="form-control" name='phone_number' required>
+     <label for="type">phone number*</label>
+     <input  id="type" type="text" class="form-control" name='phone_number' required>
 
-    <label for="document">Department details</label>
-    <input  id="document"type="string" class="form-control" name='department_details' required>
+     <label for="document">Department details</label>
+     <input  id="document"type="string" class="form-control" name='department_details' required>
 
-    <label for="email">Department Email</label>
-    <input  id="email"type="email" class="form-control" name='department_email' required>
+     <label for="email">Department Email</label>
+     <input  id="email"type="email" class="form-control" name='department_email' required>
 
-    <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Create</button>
+     <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Create</button>
 </form>
 </div>
 @endsection

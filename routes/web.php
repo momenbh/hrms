@@ -156,5 +156,6 @@ Route::get('/payroll/delete/{id}',[PayrollController::class,'delete'])->name('de
 Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('views.payroll');
 Route::get('/payroll/edit/{id}',[PayrollController::class,'edit'])->name('edit.payroll');
 Route::post('/payroll/update/{id}',[PayrollController::class,'update'])->name('update.payroll');
+Route::get('/payroll/status',[payrollcontroller::class,'status'])->name('status.payroll');
 
 });

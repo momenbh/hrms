@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\User;
 use App\Models\Payroll;
 use App\Models\Employee;
 use Illuminate\Http\Request;
@@ -10,11 +11,11 @@ use App\Http\Controllers\Controller;
 class payrollcontroller extends Controller
 {
     public function view(){
-        $payrolls=Payroll::with('employeerelation')->OrderBy('id','desc')->paginate(5);
+        $payrolls=Payroll::with('user')->OrderBy('id','desc')->paginate(5);
         return view('Backend.payroll.payroll',compact('payrolls'));
     }
     public function form(){
-        $employees = Employee::all();
+        $employees = User::all();
         return view('Backend.Payroll.payrollform',compact('employees'));
 
 
@@ -30,10 +31,10 @@ class payrollcontroller extends Controller
 
         // ]);
         Payroll::create([
-            'payment'=>$request->payment,
-            'employee_name'=>$request->employee_name,
-            'basic_payment'=>$request->basic_payment,
-            'overtime_payment'=>$request->overtime_payment,
+            'salary'=>$request->salary,
+            'employee_id'=>$request->employee_id,
+            'basic_salary'=>$request->basic_salary,
+            'overtime_salary'=>$request->overtime_salary,
             'bouns'=>$request->bouns,
             'date'=>$request->date,
 
@@ -53,17 +54,27 @@ class payrollcontroller extends Controller
         return view('Backend.payroll.view',compact('payrolls'));
     }
  public function edit($id){
-    $employees = Employee::all();
+    $employees = User::all();
     $payrolls=Payroll::find($id);
     return view('Backend.payroll.edit',compact('employees','payrolls'));
 
  }
  public function update(Request $request,$id){
+    // dd($request->all());
     $payrolls=Payroll::find($id);
     $payrolls->update([
-
+        'salary'=>$request->salary,
+        'employee_id'=>$request->employee_id,
+        'basic_salary'=>$request->basic_salary,
+        'overtime_salary'=>$request->overtime_salary,
+        'bouns'=>$request->bouns,
     ]);
     return redirect()->route('view.payroll');
+ }
+ public function status(){
+    $payrolls=Payroll::where('employee_id',auth()->user()->id)->get();
+    // dd($payrolls);
+    return view('Backend.Payroll.payrollstatus',compact('payrolls'));
  }
 
 }

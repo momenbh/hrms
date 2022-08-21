@@ -7,11 +7,12 @@ use App\Models\Department;
 use App\Models\Designation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class EmployeeController extends Controller
 {
     public function view(){
-        $employees=Employee::with('department','designationRelation')->OrderBy('id','desc')->paginate(5);
+        $employees=User::with('department','designationRelation')->OrderBy('id','desc')->paginate(5);
 
 
         return view('Backend.employee.employee',compact('employees'));
@@ -24,9 +25,9 @@ class EmployeeController extends Controller
     public function store(Request $request){
         // dd($request->image);
         $request->validate([
-            'employee_name'=>'required|string',
+            'name'=>'required|string',
             'phone_number'=>'required|string',
-            'employee_email'=>'required|string',
+            'email'=>'required|string',
         ]);
         if($request->hasFile('image')){
             $file = $request->file('image');
@@ -34,13 +35,14 @@ class EmployeeController extends Controller
             $file -> storeAs('Employee/',  $fileRename);
         }
 
-        Employee::create([
-          'employee_name'=>$request->employee_name,
+        User::create([
+          'name'=>$request->name,
           'phone_number'=>$request->phone_number,
-          'employee_email'=>$request->employee_email,
+          'email'=>$request->email,
           'date_of_birth'=>$request->date_of_birth,
           'age'=>$request->age,
           'department_id' => $request->department,
+          'password'=>bcrypt($request->password),
           'designation' =>$request->designation,
           'image' => $fileRename,
 
@@ -53,7 +55,7 @@ class EmployeeController extends Controller
         return redirect()->back();
     }
     public function views($id){
-        $employees=Employee::find($id);
+        $employees=User::find($id);
         return view('Backend.employee.employeeview',compact('employees'));
 
     }
@@ -61,17 +63,17 @@ class EmployeeController extends Controller
 
         $department = Department:: all();
         $designation = Designation::all();
-        $employees=Employee::find($id);
+        $employees=User::find($id);
         return view('Backend.employee.edit',compact('department','designation','employees'));
 
 
     }
     public function update(Request $request,$id){
-        $employees=Employee::find($id);
+        $employees=User::find($id);
         $employees->update([
-            'employee_name'=>$request->employee_name,
+            'employee_name'=>$request->name,
             'phone_number'=>$request->phone_number,
-            'employee_email'=>$request->employee_email,
+            'employee_email'=>$request->email,
             'date_of_birth'=>$request->date_of_birth,
             'age'=>$request->age,
             'department_id' => $request->department,

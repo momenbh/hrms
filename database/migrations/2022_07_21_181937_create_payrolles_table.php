@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('payrolls', function (Blueprint $table) {
             $table->id();
-            $table->string('employee_name');
-            $table->double('payment');
-            $table->double('basic_payment')->nullable();
-            $table->double('overtime_payment')->nullable();
-            $table->double('bouns')->nullable();
+            $table->string('employee_id');
+            $table->string('salary');
+            $table->string('basic_salary')->nullable();
+            $table->string('overtime_salary')->nullable();
+            $table->string('bouns')->nullable();
             $table->date('date');
             $table->timestamps();
         });

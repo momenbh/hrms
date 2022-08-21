@@ -16,15 +16,17 @@
 <form action="{{route('store.employee')}}" method="POST" enctype="multipart/form-data" style="padding: 75px;">
     @csrf
     <label for="name">Employee Name *</label>
-    <input  id="name"type="text" class="form-control" name="employee_name" required>
+    <input  id="name"type="text" class="form-control" name="name" required>
     <label for="number">Phone Number* </label>
     <input  id="number"type="text" class="form-control" name="phone_number" required>
     <label for="email">Employee Email*</label>
-    <input  id="email"type="email" class="form-control" name="employee_email" required>
+    <input  id="email"type="email" class="form-control" name="email" required>
     <label for="date">Date OF birth</label>
     <input  id="date"type="date" class="form-control" name="date_of_birth">
     <label for="integer">Age</label>
     <input  id="integer"type="number" class="form-control" name="age" required min="1" max="50">
+    <label for="integer">Password</label>
+    <input  id="integer"type="password" class="form-control" name="password" required min="1" max="50">
     <label for="image">Image</label>
     <input  id="image"type="file" class="form-control" name="image" >
     <select name="department" id="">

@@ -8,7 +8,7 @@
                 </li>
                 @if(auth()->user()->role=='admin')
                 <li class="submenu">
-                    <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class=""></span></a>
                     <ul style="display: none;">
                         {{-- <li><a class="active" href="{{route('dashboard')}}">Admin Dashboard</a></li> --}}
                         {{-- <li><a href="{{route('employee.dashboard')}}">Employee Dashboard</a></li> --}}
@@ -21,10 +21,25 @@
                          <li><a href="{{route('view.employee')}}">Employees</a></li>
                          <li><a href="{{route('view.notice')}}">Notice</a></li>
                         <li><a href="{{route('view.holiday')}}">Holidays</a></li>
-                        <li><a href="{{route('view.payroll')}}">payroll</a></li>
+                        <li class="submenu">
+                            <a href="#"><i class="la la-money"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a  href="{{route('view.payroll')}}"> Employee Salary </a></li>
+                            </ul>
+                        {{-- <li><a href="{{route('view.payroll')}}">payroll</a></li> --}}
                         <li><a href="{{route('checkin.attendance')}}">AttendanceList</a></li>
                         <li><a href="{{route('view.leavetype')}}">Leave Type</a></li>
                         <li><a href="{{route('view.leavelist')}}">LeaveList</a></li>
+                        <li class="submenu">
+                            <a href="#"><i class="la la-pie-chart"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="payments-reports.html"> Payments Report </a></li>
+                                <li><a href="employee-reports.html"> Employee Report </a></li>
+                                <li><a href="payslip-reports.html"> Payslip Report </a></li>
+                                <li><a href="attendance-reports.html"> Attendance Report </a></li>
+                                <li><a href="leave-reports.html"> Leave Report </a></li>
+                                
+                            </ul>
                         @endif
 
 
@@ -33,7 +48,7 @@
                          <li><a href="{{route('view.attendance')}}">Attendance </a></li>
                         <li><a href="{{route('view.leave')}}"> Apply Leave</a></li>
                         <li><a href="{{route('view.noticelist')}}"> Notice </a></li>
-                        <li><a href="">Payroll Status</a></li>
+                        <li><a href="{{route('status.payroll')}}">Payroll Status</a></li>
 
                         <li><a class="dropdown-item" href="{{route('do.logout')}}">Logout</a></li>
 
