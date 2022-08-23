@@ -52,6 +52,9 @@ Route::group(['middleware'=> 'auth'], function (){
 //  adminlogin
 
 Route::get('/logout',[LoginController::class,'logout'])->name('do.logout');
+//search
+
+Route::get('/search',[LoginController::class,'search'])->name('search');
 
 
 // // dashboard

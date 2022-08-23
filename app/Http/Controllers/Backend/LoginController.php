@@ -48,4 +48,9 @@ class LoginController extends Controller
             return redirect()->route('login.view');
 
         }
+        public function search(Request $request){
+            $employees=User::where('name','like','%'.$request->employee.'%')->get();
+            return view('Backend.fixed.search',compact('employees'));
+
+        }
     }

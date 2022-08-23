@@ -9,7 +9,7 @@
                     <img alt="" src="{{url('Backend/assets/img/profiles/avatar-02.jpg')}}">
                 </div>
                 <div class="welcome-det">
-                    <h3>Welcome, John Doe</h3>
+                    <h3>Welcome, Hasam</h3>
                     <p>Monday, 20 Auguest 2021</p>
                 </div>
             </div>

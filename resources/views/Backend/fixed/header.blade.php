@@ -34,8 +34,8 @@
                 <a href="javascript:void(0);" class="responsive-search">
                     <i class="fa fa-search"></i>
                </a>
-                <form action="search.html">
-                    <input class="form-control" type="text" placeholder="Search here">
+                <form action="{{route('search')}}" method="get">
+                    <input class="form-control" type="text" placeholder="Search here" name="employee">
                     <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
