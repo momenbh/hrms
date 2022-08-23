@@ -83,4 +83,8 @@ class EmployeeController extends Controller
         ]);
         return redirect()->route('view.employee');
     }
+    public function report(){
+        $employees=User::OrderBy('id','desc')->paginate(5);
+        return view('Backend.employee.employeereport',compact('employees'));
+    }
 }

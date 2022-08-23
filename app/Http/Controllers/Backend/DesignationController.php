@@ -23,14 +23,14 @@ class DesignationController extends Controller
 
         $request->validate([
             'designation'=>'required|string',
-            'department_name'=>'required|string',
+            'department_id'=>'required|string',
             'status'=>'required|string',
 
         ]);
         // dd($request->all());
         Designation::create([
            'designation'=>$request->designation,
-           'department_name'=>$request->department_name,
+           'department_id'=>$request->department_id,
            'status'=>$request->status,
         ]);
         return redirect()->route('view.designation');

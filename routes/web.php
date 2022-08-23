@@ -97,6 +97,7 @@ Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('
 Route::get('/employee/views/{id}',[EmployeeController::class,'views'])->name('views.employee');
 Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('edit.employee');
 Route::post('/employee/update/{id}',[EmployeeController::class,'update'])->name('update.employee');
+Route::get('/employee/report',[EmployeeController::class,'report'])->name('report.employee');
 
 
 
@@ -121,6 +122,7 @@ Route::get('leave/typeviews/{id}',[Leavecontroller::class,'typeviews'])->name('t
 Route::get('leave/typeedit/{id}',[Leavecontroller::class,'typeedit'])->name('typeedit.leave');
 Route::post('leave/typeupdate/{id}',[Leavecontroller::class,'typeupdate'])->name('typeupdate.leave');
 Route::post('leave/status/{id}',[Leavecontroller::class,'status'])->name('leave.status');
+Route::get('leave/report',[Leavecontroller::class,'report'])->name('leave.report');
 
 // attendance operation
 
@@ -128,7 +130,8 @@ Route::get('/attendance/view',[AttendanceController::class,'view'])->name('view.
 Route::get('/attendance/checkout/{id}',[AttendanceController::class,'checkout'])->name('checkout.attendance');
 Route::get('/attendance/store',[AttendanceController::class,'store'])->name('store.attendance');
 Route::get('/attendance/checkattendance',[AttendanceController::class,'checkattendance'])->name('checkin.attendance');
-// notice operation
+Route::get('/attendance/report',[AttendanceController::class,'report'])->name('report.attendance');
+// notice operationreport.attendance
 Route::get('/notice/view',[Noticecontroller::class,'view'])->name('view.notice');
 Route::get('/notice/view/list',[Noticecontroller::class,'list'])->name('view.noticelist');
 Route::get('/notice/form',[Noticecontroller::class,'form'])->name('form.notice');
@@ -157,5 +160,6 @@ Route::get('/payroll/views/{id}',[PayrollController::class,'views'])->name('view
 Route::get('/payroll/edit/{id}',[PayrollController::class,'edit'])->name('edit.payroll');
 Route::post('/payroll/update/{id}',[PayrollController::class,'update'])->name('update.payroll');
 Route::get('/payroll/status',[payrollcontroller::class,'status'])->name('status.payroll');
+Route::get('/payroll/report',[payrollcontroller::class,'report'])->name('report.payroll');
 
 });

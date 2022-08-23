@@ -67,6 +67,9 @@ class AttendanceController extends Controller
             Toastr::success('checkOut done', 'success');
            return redirect()->route('view.attendance');
         
+    }public function report(){
+        $attendance=Attendance::OrderBy('id','desc')->paginate(5);
+        return view('Backend.Attendance.attendancereport',compact('attendance'));
     }
     
 

@@ -67,7 +67,7 @@
         <!-- Notifications -->
         <li class="nav-item dropdown">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span>
+                <i class="fa fa-bell-o"></i> <span class="badge badge-pill"></span>
             </a>
             <div class="dropdown-menu notifications">
                 <div class="topnav-dropdown-header">
@@ -153,7 +153,7 @@
         <!-- Message Notifications -->
         <li class="nav-item dropdown">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <i class="fa fa-comment-o"></i> <span class="badge badge-pill">8</span>
+                <i class="fa fa-comment-o"></i> <span class="badge badge-pill"></span>
             </a>
             <div class="dropdown-menu notifications">
                 <div class="topnav-dropdown-header">

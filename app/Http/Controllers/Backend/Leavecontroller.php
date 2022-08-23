@@ -122,6 +122,10 @@ public function status(Request $request,$id){
     ]);
     return redirect()->back();
 }
+public function report(){
+    $leaves=Leave::OrderBy('id','desc')->paginate(5);
+    return view('Backend.leave.leavereport',compact('leaves'));
+}
 
 
 }

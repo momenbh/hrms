@@ -76,5 +76,9 @@ class payrollcontroller extends Controller
     // dd($payrolls);
     return view('Backend.Payroll.payrollstatus',compact('payrolls'));
  }
+ public function report(){
+    $payrolls=Payroll::paginate(5);;
+    return view('Backend.Payroll.payrollreport',compact('payrolls'));
+ }
 
 }

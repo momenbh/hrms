@@ -10,7 +10,7 @@ class Designation extends Model
     protected $guarded=[];
     public function departmentrelation(){
 
-        return $this->belongsTo(Department::class, 'department_name', 'id');
+        return $this->belongsTo(Department::class, 'department_id', 'id');
     }
 
 
