@@ -15,10 +15,8 @@ return new class extends Migration
     {
         Schema::create('notices', function (Blueprint $table) {
             $table->id();
-            $table->string('department_notice')->nullable();
-            $table->string('holiday_notice')->nullable();
-            $table->string('payroll_notice')->nullable();
-            $table->string('notice_time')->nullable();
+            $table->string('notice_name');
+            $table->string('notice_details');
             $table->timestamps();
         });
     }

@@ -18,21 +18,14 @@ class Noticecontroller extends Controller
     }
     public function store(Request $request){
         // dd($request->all());
-        // $request->validate([
-        //  'new_notice'=>'required|string',
-        //  'govement_notice'=>'required|string',
-        //  'department_notice'=>'required|string',
-        //  'holiday_notice'=>'required|string',
-        //  'payroll_notice'=>'required|string',
-        //  'notice_time'=>'required|string',
-
-
-        // ]);
+        $request->validate([
+         'notice_name'=>'required|string',
+         'notice_details'=>'required|string',
+        ]);
         Notice::create([
-         'department_notice'=>$request->department_notice,
-         'holiday_notice'=>$request->holiday_notice,
-         'payroll_notice'=>$request->payroll_notice,
-         'notice_time'=>$request->notice_time,
+            'notice_name'=>$request->notice_name,
+            'notice_details'=>$request->notice_details,
+            
         ]);
         return redirect()->route('view.notice');
     }
@@ -55,12 +48,9 @@ class Noticecontroller extends Controller
     public function update(Request $request,$id){
         $notice=Notice::find($id);
         $notice->update([
-            'new_notice'=>$request->new_notice,
-            'govement_notice'=>$request->govement_notice,
-            'department_notice'=>$request->department_notice,
-            'holiday_notice'=>$request->holiday_notice,
-            'payroll_notice'=>$request->payroll_notice,
-            'notice_time'=>$request->notice_time,
+            'notice_name'=>$request->notice_name,
+            'notice_details'=>$request->notice_details,
+            
         ]);
         return redirect()->route('view.notice');
     }

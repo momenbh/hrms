@@ -6,11 +6,11 @@
         <div class="col-md-12">
             <div class="welcome-box">
                 <div class="welcome-img">
-                    <img alt="" src="{{url('Backend/assets/img/profiles/avatar-02.jpg')}}">
+                    <img alt="" src="{{url('/uploads/Employee/') .'/' . auth()->user()->image}}">
                 </div>
                 <div class="welcome-det">
-                    <h3>Welcome, Hasam</h3>
-                    <p>Monday, 20 Auguest 2021</p>
+                    <h3>Welcome, {{auth()->user()->name}}</h3>
+                    <p>{{auth()->user()->date_of_birth}}</p>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                         </a>
                     </div>
 
-                    <div class="dash-info-list">
+                    {{-- <div class="dash-info-list">
                         <a href="#" class="dash-card">
                             <div class="dash-card-container">
                                 <div class="dash-card-icon">
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> --}}
 
                     <div class="dash-info-list">
                         <a href="#" class="dash-card">
@@ -60,10 +60,10 @@
                                     <i class="fa fa-building-o"></i>
                                 </div>
                                 <div class="dash-card-content">
-                                    <p>You are working from home today</p>
+                                    <p>You are working today</p>
                                 </div>
                                 <div class="dash-card-avatars">
-                                    <div class="e-avatar"><img src="assets/img/profiles/avatar-02.jpg" alt=""></div>
+                                    <div class="e-avatar"><img src="{{url('/uploads/Employee/') .'/' . auth()->user()->image}}" alt=""></div>
                                 </div>
                             </div>
                         </a>

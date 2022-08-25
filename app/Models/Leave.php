@@ -11,8 +11,10 @@ class Leave extends Model
     public function leavetypeId(){
 
         return $this->belongsTo(Type::class,'leave_type','id');
+   
 
     }
+    
 
 
 }

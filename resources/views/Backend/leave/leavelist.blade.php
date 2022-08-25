@@ -1,13 +1,13 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>leave List</h1>
-
-<div>
+<div style="padding: 50px">
+    <h1 style="color: brown">leave List</h1>
     <table class="table">
         <thead>
 
              <tr>
                 <th scope="col">id</th>
+                <th scope="col">Employee Name</th>
                 <th scope="col">Leave Type</th>
                 <th scope="col">from_date</th>
                 <th scope="col">to_date</th>
@@ -26,6 +26,7 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
+                <td scope="col">{{$data->employee_name}}</td>
                 <td scope="col">{{optional($data->leavetypeId)->name}}</td>
                 <td scope="col">{{$data->from_date}}</td>
                 <td scope="col">{{$data->to_date}}</td>

@@ -7,10 +7,9 @@
         <thead>
             <tr>
                 <th scope="col">id</th>
-                <th scope="col">Department Notice</th>
-                <th scope="col">Holiday Notice</th>
-                <th scope="col">Payroll Notice</th>
-                <th scope="col">Notice time</th>
+                <th scope="col">Notice Name</th>
+                <th scope="col">Notice Details</th>
+                <th scope="col">Time</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -20,10 +19,9 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->department_notice}}</td>
-                <td scope="col">{{$data->holiday_notice}}</td>
-                <td scope="col">{{$data->payroll_notice}}</td>
-                <td scope="col">{{$data->notice_time}}</td>
+                <td scope="col">{{$data->notice_name}}</td>
+                <td scope="col">{{$data->notice_details}}</td>
+                <td scope="col">{{$data->created_at->diffForHumans()}}
                 <td scope="col">
                     <a class="btn btn-primary" href="{{route('edit.notice',$data->id)}}"><img src="{{url('backend/assets/icon/edit.svg')}}" alt=""></a>
                     <a class="btn btn-success" href="{{route('single.notice', $data->id)}}"><img src="{{url('backend/assets/icon/view.svg')}}" alt=""></a>

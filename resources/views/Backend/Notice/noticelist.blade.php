@@ -1,16 +1,15 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>Notice</h1>
-<div>
+<h1 class="mt-3 ml-3" style="color:brown">Notice</h1>
+<div style="padding: 40px">
      <table class="table">
         <thead>
             <tr>
                 <th scope="col">id</th>
-                <th scope="col">Department Notice</th>
-                <th scope="col">Holiday Notice</th>
-                <th scope="col">Payroll Notice</th>
-                <th scope="col">Notice time</th>
-
+                <th scope="col">Notice Name</th>
+                <th scope="col">Notice Details</th>
+                <th scope="col">Time</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -19,11 +18,9 @@
 
             <tr>
                 <td scope="col">{{$key+1}}</td>
-                <td scope="col">{{$data->department_notice}}</td>
-                <td scope="col">{{$data->holiday_notice}}</td>
-                <td scope="col">{{$data->payroll_notice}}</td>
-                <td scope="col">{{$data->notice_time}}</td>
-               
+                <td scope="col">{{$data->notice_name}}</td>
+                <td scope="col">{{$data->notice_details}}</td>
+                <td scope="col">{{$data->created_at->diffForHumans()}}</td>
             </tr>
             @endforeach
         </tbody>

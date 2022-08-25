@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 use App\Models\Type;
 use App\Models\Leave;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +16,9 @@ class Leavecontroller extends Controller
         return view('Backend.leave.leave',compact('leaves'));
     }
     public function form(){
+        $employees=Employee::all();
         $types=Type::all();
-        return view('Backend.leave.leaveform',compact('types'));
+        return view('Backend.leave.leaveform',compact('types','employees'));
 
     }
     public function store(Request $request){
@@ -30,6 +32,7 @@ class Leavecontroller extends Controller
             $days =($to_date-$from_date)/(60*60*24)+1;
            
         Leave::create([
+        'employee_name'=>auth()->user()->name,
           'leave_type'=>$request->leave_type,
           'from_date'=>$request->from_date,
           'to_date'=>$request->to_date,

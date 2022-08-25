@@ -1,7 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
 <div>
-    <form action="{{route('store.leave')}}" method="POST" style="padding: 75px">
+    <form action="{{route('store.leave')}}" method="POST" style="padding: 55px">
         @csrf
         <label for="text" >Leave Type</label><br>
 
