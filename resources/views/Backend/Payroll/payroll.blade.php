@@ -1,9 +1,9 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>Create payroll</h1>
+<div style="padding: 50px">
+    <h1 style="color: brown">Create payroll</h1>
 <a href="{{route('form.payroll')}}" class="btn btn-success">Create</a>
-<div>
-    <table class="table">
+    <table class="table mt-3" >
         <thead>
             <tr>
                 <th scope="col">id</th>
@@ -23,7 +23,6 @@
             <tr>
                 <td scope="col">{{$key+1}}</td>
                 <td scope="col">{{optional($data->user)->name}}</td>
-                {{-- <td scope="col">{{$data->employee_name}}</td> --}}
                 <td scope="col">{{$data->salary}}</td>
                 <td scope="col">{{$data->basic_salary}}</td>
                 <td scope="col">{{$data->overtime_salary}}</td>

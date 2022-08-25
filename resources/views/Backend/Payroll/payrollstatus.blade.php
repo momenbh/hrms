@@ -23,7 +23,6 @@
                 <tr>
                     <td scope="col">{{$key+1}}</td>
                     <td scope="col">{{optional($data->user)->name}}</td>
-                    {{-- <td scope="col">{{$data->employee_name}}</td> --}}
                     <td scope="col">{{$data->salary}}</td>
                     <td scope="col">{{$data->basic_salary}}</td>
                     <td scope="col">{{$data->overtime_salary}}</td>

@@ -16,9 +16,9 @@ class Leavecontroller extends Controller
         return view('Backend.leave.leave',compact('leaves'));
     }
     public function form(){
-        $employees=Employee::all();
+    
         $types=Type::all();
-        return view('Backend.leave.leaveform',compact('types','employees'));
+        return view('Backend.leave.leaveform',compact('types'));
 
     }
     public function store(Request $request){

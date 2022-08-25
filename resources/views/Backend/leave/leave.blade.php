@@ -1,6 +1,7 @@
 @extends('Backend.master')
 @section('backend_content')
-<h1>Apply Leave</h1>
+<div style="padding: 40px">
+    <h1 style="color: brown">Apply Leave</h1>
 <a href="{{route('form.leave')}}" class="btn btn-primary">Apply</a>
 <table class="table">
     <thead>
@@ -46,5 +47,6 @@
         @endforeach
     </tbody>
 </table>
+</div>
 {{$leaves->links()}}
 @endsection
