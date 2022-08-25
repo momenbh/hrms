@@ -48,7 +48,11 @@
                         <li><a href="{{route('view.leave')}}"> Apply Leave</a></li>
                         <li><a href="{{route('view.noticelist')}}">View Notice </a></li>
                         <li><a href="{{route('status.payroll')}}">Payroll Status</a></li>
-
+                        <li class="submenu">
+                            <a href="#"><i class="la la-pie-chart"></i> <span>Contact</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{{route('employee.mail')}}">Mail</a></li>
+                            </ul>
                         <li><a class="dropdown-item" href="{{route('do.logout')}}">Logout</a></li>
 
                           @endif

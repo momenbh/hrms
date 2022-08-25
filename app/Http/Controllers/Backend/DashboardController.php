@@ -11,6 +11,9 @@ use App\Models\Department;
 use App\Models\Designation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailController;
+
 
 class DashboardController extends Controller
 {
@@ -27,5 +30,25 @@ class DashboardController extends Controller
     }
     public function dashboard(){
         return view('Backend.dashboard.employeedashboard');
+    }
+
+    public function mail()
+    {
+        return view('Backend.mail.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = [
+            'subject' =>$request->subject,
+            'email' => $request->email,
+            'reson' => $request->reson,
+            'name' => auth()->user()->name,
+        ];
+        // dd($data);
+
+         Mail::to('admin@gmail.com')->send(new \App\Mail\MailController($data));
+   
+        return redirect()->route('dashboard');
     }
 }

@@ -165,4 +165,8 @@ Route::post('/payroll/update/{id}',[PayrollController::class,'update'])->name('u
 Route::get('/payroll/status',[payrollcontroller::class,'status'])->name('status.payroll');
 Route::get('/payroll/report',[payrollcontroller::class,'report'])->name('report.payroll');
 
+Route::get('/mail', [Dashboardcontroller::class, 'mail'])->name('employee.mail');
+Route::post('/mail-store', [Dashboardcontroller::class, 'store'])->name('employee.mail.store');
+
+
 });
