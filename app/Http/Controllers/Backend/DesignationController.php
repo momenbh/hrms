@@ -53,7 +53,7 @@ class DesignationController extends Controller
         $designation=Designation::find($id);
         $designation->update([
             'designation'=>$request->designation,
-           'department_name'=>$request->department_name,
+           'department_id'=>$request->department_id,
            'status'=>$request->status,
 
         ]);

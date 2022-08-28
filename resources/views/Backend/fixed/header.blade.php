@@ -43,7 +43,7 @@
         <!-- /Search -->
 
         <!-- Flag -->
-        <li class="nav-item dropdown has-arrow flag-nav">
+        {{-- <li class="nav-item dropdown has-arrow flag-nav">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
                 <img src="{{url('backend/assets/img/flags/us.png')}}" alt="" height="20"> <span>English</span>
             </a>
@@ -61,7 +61,7 @@
                     <img src="{{url('backend/assets/img/flags/de.png')}}" alt="" height="16"> German
                 </a>
             </div>
-        </li>
+        </li> --}}
         <!-- /Flag -->
 
         <!-- Notifications -->

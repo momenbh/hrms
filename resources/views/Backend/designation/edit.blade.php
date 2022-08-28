@@ -5,7 +5,7 @@
         @csrf
         <label for="name" >Department name</label>
         <br>
-        <select id="name" class="form-select" aria-label="Default select example" name="department_name">
+        <select id="name" class="form-select" aria-label="Default select example" name="department_id">
             <option selected>select Department</option>
 
             @foreach ($department as $data)
